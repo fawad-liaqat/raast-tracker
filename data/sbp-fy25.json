@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "source": "State Bank of Pakistan, Annual Payment Systems Review FY25",
+    "publication_date": "2025-11-03",
+    "extraction_date": "2026-03-21",
+    "version": "1.0",
+    "author": "Fawad Liaqat",
+    "tools_used": {
+      "extraction": "Camelot 0.11.0 (lattice + stream modes)",
+      "verification": "Manual cross-check against SBP press release PR-03-Nov-2025"
+    },
+    "fiscal_year_definition": "FY25 = July 2024 to June 2025"
+  },
+  "raast_timeseries": [
+    {
+      "period": "FY23",
+      "volume_millions": 147.2,
+      "value_pkr_trillions": 3.1,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Raast section, time series table" }
+    },
+    {
+      "period": "FY24",
+      "volume_millions": 496.1,
+      "value_pkr_trillions": 11.5,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Raast section, time series table" }
+    },
+    {
+      "period": "FY25",
+      "volume_millions": 1276.0,
+      "value_pkr_trillions": 29.6,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Raast section, time series table" }
+    }
+  ],
+  "retail_payments": {
+    "fy25_annual": {
+      "total_millions": 9100,
+      "total_value_pkr_trillions": 612,
+      "digital_share_pct": 88,
+      "volume_yoy_growth_pct": 38,
+      "value_yoy_growth_pct": 12,
+      "mobile_app_millions": 6200,
+      "mobile_app_yoy_growth_pct": 52,
+      "internet_banking_millions": 297,
+      "internet_banking_yoy_growth_pct": 33,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Executive summary, retail payments section" }
+    },
+    "digital_share_history": {
+      "fy23_pct": 78,
+      "fy24_pct": 85,
+      "fy25_pct": 88,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Digital payments section" }
+    }
+  },
+  "infrastructure": {
+    "atm_count": {
+      "fy24": 18957,
+      "fy25": 20341,
+      "growth_pct": 7,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Infrastructure section" }
+    },
+    "cdm_count": {
+      "fy24": 579,
+      "fy25": 1038,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Infrastructure section" }
+    },
+    "pos_terminals": {
+      "fy24": null,
+      "fy25": 195849,
+      "merchants_fy25": 159284,
+      "growth_pct": 56,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "POS deployment section" }
+    },
+    "qr_merchants": {
+      "fy24": 516317,
+      "fy25": 1092004,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Digital acceptance section" }
+    },
+    "ecommerce_merchants": {
+      "fy24": 7816,
+      "fy25": 9584,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "E-commerce subsection" }
+    },
+    "bb_agents": {
+      "fy25": 731814,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "Branchless banking section" }
+    }
+  },
+  "user_adoption": {
+    "mobile_banking_users_m": {
+      "fy24": 18.7,
+      "fy25": 24.1,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "User adoption section" }
+    },
+    "bb_mobile_app_users_m": {
+      "fy24": 58.7,
+      "fy25": 79.2,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "User adoption section" }
+    },
+    "ewallet_users_m": {
+      "fy24": 3.7,
+      "fy25": 5.8,
+      "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "EMI section" }
+    }
+  },
+  "atm_usage": {
+    "daily_avg_per_atm": 140,
+    "cash_withdrawal_pct": 98,
+    "total_atms": 20341,
+    "source_ref": { "pdf": "Annual-Payment-Systems-Review-FY25.pdf", "page": null, "table": "ATM section" }
+  },
+  "adoption_gap_index": {
+    "formula": "(Total Raast P2P Transactions FY25 / Total Registered Digital Accounts) x 100",
+    "numerator": 1276.0,
+    "numerator_unit": "millions",
+    "denominator_option": "B",
+    "denominator_description": "Mobile banking app users only (24.1M), as primary Raast-enabled accounts",
+    "denominator_value": 24.1,
+    "denominator_unit": "millions",
+    "computed_value": 52.9,
+    "computed_unit": "transactions per account per year",
+    "notes": "Option B chosen as most defensible. Mobile banking app users are the primary Raast-enabled account base. Option A (109.1M combining all digital users) has significant overlap. Unique transacting account data is not publicly available from SBP."
+  }
+}
