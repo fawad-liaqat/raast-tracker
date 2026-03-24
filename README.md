@@ -4,7 +4,7 @@ An interactive, single page dashboard mapping the distance between
 Pakistan's digital payment infrastructure growth and actual behavioral
 adoption of cashless transactions.
 
-**Live Demo**: [raast-tracker.vercel.app](https://raast-tracker.vercel.app)
+**Live Demo**: [raast-tracker.vercel.app](https://fawad-liaqat.github.io/raast-tracker/)
 
 ## The Core Question
 
