@@ -61,9 +61,8 @@ function CashCounter({ data }) {
           Low use per QR merchant (Block B) is consistent with that.
         </p>
         <p>
-          <strong>Trust:</strong> the Karandaaz survey for 2024, as reported in the press, found that only 9% of excluded
-          adults trust banks and 8% trust mobile money providers, and that 36% of adults feel comfortable using
-          any financial service <Src id="R3" />.
+          <strong>Trust:</strong> in the Karandaaz survey for 2024, 63% of financially excluded adults trust state owned
+          banks and 52% trust mobile money services, against 93% and 92% of the included <Src id="R3" p="27" />.
         </p>
       </div>
     </section>

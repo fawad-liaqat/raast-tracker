@@ -67,7 +67,7 @@ function DensityComparison({ data }) {
         <span className="insight-label analysis">Analysis</span>
         <p>
           QR enabled merchants rose from 1.09 million to 3.84 million in a year, which the State Bank links to a
-          subsidy under the Prime Minister's Cashless Pakistan Initiative <Src id="R1" p="7" />. POS devices grew 49%
+          subsidy under the Prime Minister's Cashless Pakistan Initiative <Src id="R1" p="7" />. The subsidy ran from 1 September 2025 to 30 June 2026 <Src id="R4" p="58" />. On 13 November 2026 the government said it would continue subsidising merchant fees on Raast QR payments; the terms were not published <Src id="R12" />. POS devices grew 49%
           to 337,791, mostly because of Soft POS. CDMs nearly doubled to 1,896. Branchless banking agents
           reached 837,244 <Src id="R1" p="15" />. Raast had 3.6 million merchants registered on its merchant alias by June 2026 <Src id="R1" p="11" />.
         </p>

@@ -27,7 +27,7 @@ function InsightPanel() {
           <strong>Evidence:</strong> Account ownership is 27% in Pakistan, against 89% in India and 90% in Kenya <Src id="R2" p="297" /> <Src id="R2" p="298" />.
           Pakistan's gender gap in account ownership is 30 percentage points <Src id="R2" p="98" />, and the gap in
           mobile phone ownership is 65 points <Src id="R2" p="25" />. Pakistan's own survey tells the same story:
-          35% of adults financially included in 2024, 56% of men and 14% of women <Src id="R3" /> <Src id="R4" />.
+          35% of adults financially included in 2024, 56% of men and 14% of women <Src id="R3" p="7" />.
         </div>
         <div className="layer-evidence">
           <strong>Why the two numbers differ:</strong> Findex (27%) and the Karandaaz survey (35%) use different
@@ -48,9 +48,11 @@ function InsightPanel() {
           <div className="layer-title">Trust</div>
         </div>
         <div className="layer-evidence">
-          <strong>Evidence:</strong> In the 2024 Karandaaz survey, as reported in the press, 9% of excluded adults said
-          they trust banks and 8% trust mobile money providers. 36% of adults feel comfortable using any
-          financial service, and 85% rely on informal sources, mainly family and friends, for credit <Src id="R3" />.
+          <strong>Evidence:</strong> In the Karandaaz survey for 2024, trust is much lower among people outside the system:
+          63% of financially excluded adults trust state owned banks, 54% private banks and 52% mobile money services,
+          against 93%, 90% and 92% of the financially included <Src id="R3" p="27" />. Among adults who borrowed, 85%
+          borrowed from family and friends <Src id="R3" p="25" />. (The first November update quoted press figures of
+          9% and 8% trust and 36% comfort; they do not appear in the survey report and are withdrawn.)
         </div>
         <div className="layer-comparison">
           <strong>Comparative (hypothesis):</strong> Kenya's M-Pesa grew through local agents whom users already
@@ -69,7 +71,7 @@ function InsightPanel() {
           <strong>Evidence:</strong> Among people who already bank, 97.6% of ATM transactions are cash withdrawals
           (my calculation) <Src id="R1" p="26" />. Merchant payments are 6.6% of Raast volume (my calculation) <Src id="R1" p="31" />.
           When incentives changed, merchants signed up: QR merchants more than tripled within a year under the
-          Cashless Pakistan subsidy <Src id="R1" p="7" />.
+          Cashless Pakistan subsidy <Src id="R1" p="7" />. The subsidy, 0.5% of value or PKR 100 per payment, whichever is lower, ran from 1 September 2025 to 30 June 2026 <Src id="R4" p="58" />. On 13 November 2026 the government said it would continue subsidising merchant fees on Raast QR payments; the terms were not published <Src id="R12" />.
         </div>
         <div className="layer-comparison">
           <strong>Comparative:</strong> India removed the merchant discount rate on UPI and RuPay payments from
@@ -85,8 +87,10 @@ function InsightPanel() {
           <div className="layer-title">Design and literacy</div>
         </div>
         <div className="layer-evidence">
-          <strong>Evidence:</strong> In the Karandaaz survey, self rated digital ability scored 65 for men and 48 for
-          women <Src id="R4" />. Findex reports difficulty reading or typing as a common reason for not owning a
+          <strong>Evidence:</strong> The Karandaaz Digital Literacy Index scores men 65 and women 48, and urban adults 70
+          against rural 51 <Src id="R3" p="30" />. On the survey's financial literacy measure, 32% of men and 12% of women
+          pass, and 38% of the financially included against 12% of the excluded <Src id="R3" p="11" />. That is a strong
+          association with inclusion, not proof that literacy causes it. Findex reports difficulty reading or typing as a common reason for not owning a
           phone in South Asia <Src id="R2" p="32" />. Pakistan already has 46.1 million registered call centre and
           IVR banking users <Src id="R1" p="9" />, so voice channels are not new to banks here.
         </div>

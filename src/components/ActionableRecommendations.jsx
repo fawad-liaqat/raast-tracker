@@ -23,8 +23,8 @@ function ActionableRecommendations() {
       title: 'Build a basic phone route into Raast',
       implementer: 'SBP and banks',
       mechanism: 'USSD and IVR access to Raast payments that does not need a smartphone or internet.',
-      effect: 'Reaches people with basic phones. In the Karandaaz survey only 46% of women owned a phone, against 82% of men.',
-      precedent: (<>India's UPI123Pay for feature phones (2022) <Src id="R8" />. Karandaaz figures: <Src id="R3" />.</>),
+      effect: 'Reaches people without smartphones. In the Karandaaz survey 46% of women owned a smartphone, against 82% of men.',
+      precedent: (<>India's UPI123Pay for feature phones (2022) <Src id="R8" />. Karandaaz figures: <Src id="R3" p="29" />.</>),
     },
     {
       title: 'Pay agents for helping people make digital payments',
@@ -38,7 +38,7 @@ function ActionableRecommendations() {
       implementer: 'SBP',
       mechanism: 'Require native Urdu flows, fewer steps, and voice guidance in Raast enabled apps.',
       effect: 'Reduces friction for people with low literacy or limited English.',
-      precedent: (<>No verified precedent cited. Self rated digital ability in the Karandaaz survey: 65 for men, 48 for women <Src id="R4" />.</>),
+      precedent: (<>No verified precedent cited. Karandaaz Digital Literacy Index: 65 for men, 48 for women; 51 rural against 70 urban <Src id="R3" p="30" />.</>),
     },
   ]
 

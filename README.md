@@ -37,7 +37,7 @@ See [METHODOLOGY.md](./METHODOLOGY.md) for formulas, corrections and limitations
 1. State Bank of Pakistan. *Annual Payment Systems Review FY 2025-26* (provisional). October 2026. https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY26.pdf. Accessed 17 November 2026. Primary.
 2. World Bank. *The Global Findex Database 2025* (survey year 2024). 2025. https://www.worldbank.org/en/publication/globalfindex. Accessed 17 November 2026. Primary.
 
-The dashboard's Sources section lists all eleven sources used on the page.
+The dashboard's Sources section lists all twelve sources used on the page, including the Karandaaz Financial Inclusion Survey 2024 narrative report.
 
 ## Run locally
 

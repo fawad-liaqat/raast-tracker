@@ -28,9 +28,13 @@ function MethodologyNote({ metadata }) {
               style={{ padding: "10px 0", borderBottom: "1px solid #ECF0F1", fontSize: "12px", color: "#2C3E50" }}
             >
               {s.publisher}. <em>{s.title}</em>. {s.date}.{" "}
-              <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E86C1" }}>
-                {s.url}
-              </a>
+              {s.url ? (
+                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E86C1" }}>
+                  {s.url}
+                </a>
+              ) : (
+                "No public link confirmed"
+              )}
               . Accessed {s.accessed}. <strong>{s.label}</strong>.
               {s.note ? <span style={{ color: "#7F8C8D" }}> {s.note}</span> : null}
             </li>
@@ -65,7 +69,7 @@ function MethodologyNote({ metadata }) {
           <li>User categories (mobile banking, branchless banking apps, e-wallets) overlap.</li>
           <li>POS device counts now include Soft POS, which breaks comparison with FY24 and earlier.</li>
           <li>Years differ across countries: FY26 for Pakistan, April to March for India and Kenya, a 2024 survey for Findex.</li>
-          <li>Karandaaz survey figures come from press reports of the survey, not the survey report itself.</li>
+          <li>Karandaaz survey figures come from the K-FIS 2024 narrative report. Its inclusion definition (registered users) differs from Findex, so the two are not directly comparable.</li>
         </ul>
 
         <h3 style={{ marginTop: "24px" }}>Theoretical framework (background reading, not used as data)</h3>

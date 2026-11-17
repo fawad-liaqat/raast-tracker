@@ -18,11 +18,11 @@ had a typo, 1,092,004).
 
 ### Other sources
 The dashboard's Sources section lists all sources with dates, links and access dates:
-World Bank Global Findex 2025 [2]; press reports of the Karandaaz Financial Inclusion Survey
-2024 [3, 4]; Government of India releases on UPI [5, 6]; a press report on India's zero MDR
+World Bank Global Findex 2025 [2]; the Karandaaz Financial Inclusion Survey 2024 narrative
+report [3]; the SBP Governor's Annual Report 2025-26 on the Raast QR subsidy [4]; Government of India releases on UPI [5, 6]; a press report on India's zero MDR
 decision [7]; the Reserve Bank of India release on UPI123Pay [8]; a press report on Safaricom's
 FY26 M-Pesa results [9]; the SBP release on Raast's launch [10]; Central Bank of Kenya reports
-index [11].
+index [11]; a Business Recorder report on continuing the Raast QR subsidy [12].
 
 ## Extraction process
 
@@ -69,7 +69,7 @@ Raast P2P payments / mobile banking users:
 4. User categories overlap.
 5. POS devices now include Soft POS, so FY25 and FY26 are not comparable with FY24.
 6. Years differ across countries.
-7. Karandaaz survey figures come from press reports, not the survey report.
+7. Karandaaz survey figures come from the K-FIS 2024 narrative report. The first November update used press reports; their trust figures (9%, 8%, 36%) are not in the report and were withdrawn, and the 46% and 82% figures are smartphone, not phone, ownership.
 
 ## Assumptions
 
@@ -82,14 +82,15 @@ Raast P2P payments / mobile banking users:
 | Version | Date | Change |
 |---------|------|--------|
 | 1.0 | 2026-03-21 | Initial extraction from SBP FY25 Annual Review |
+| 2.1 | 2026-11-17 | K-FIS narrative report replaces press reports; trust figures corrected; Raast QR subsidy dates and continuation added |
 | 2.0 | 2026-11-17 | Moved to SBP FY26 review; Findex 2025; new index denominator (Raast IDs); corrections listed above; numbered sources on every figure |
 
 ## Sources
 
 1. State Bank of Pakistan. *Annual Payment Systems Review FY 2025-26* (provisional). October 2026. https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY26.pdf. Accessed 17 November 2026.
 2. World Bank. *The Global Findex Database 2025*. 2025. https://www.worldbank.org/en/publication/globalfindex. Accessed 17 November 2026.
-3. Mettis Global. *Karandaaz releases K-FIS 2024 on financial inclusion trends*. 18 June 2025. https://mettisglobal.news/Karandaaz-releases-KFIS-2024-on-financial-inclusion-trends-53170. Accessed 17 November 2026. Secondary.
-4. Business Recorder. *Bridging the financial gap: insights from Karandaaz Financial Inclusion Survey (K-FIS), part I*. 5 July 2025. https://www.brecorder.com/news/40371177/bridging-the-financial-gap-insights-from-karandaaz-financial-inclusion-survey-k-fisi. Accessed 17 November 2026. Secondary.
+3. Karandaaz Pakistan (Semiotics Consultants). *Karandaaz Financial Inclusion Survey (K-FIS), Narrative Report*, survey year 2024. April 2025. pp. 7, 11, 25, 27, 29, 30. Local PDF supplied by the owner; https://www.karandaaz.com.pk/research/publications/karandaaz-financial-inclusion-survey-k-fis-narrative-report (link not opened). Accessed 17 November 2026. Primary.
+4. State Bank of Pakistan. *Governor's Annual Report 2025-26*, pp. 21 and 58. Local copy supplied by the owner; no public link confirmed. Accessed 17 November 2026. Primary.
 5. Government of India, Ministry of Finance, via PIB. *Nearly 55.49 crore users onboarded on UPI as in June 2026*. 20 July 2026. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286608&reg=48&lang=2. Accessed 17 November 2026.
 6. Government of India, Ministry of Finance, via PIB. *UPI completes 10 years of digital payments revolution*. 24 August 2026. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2302657&reg=48&lang=2. Accessed 17 November 2026.
 7. Outlook Business. *No MDR charges from Jan 1 on UPI, RuPay transactions*. 28 December 2019. https://www.outlookbusiness.com/talking-money/no-mdr-charges-from-jan-1-on-upi-rupay-transactions-4103. Accessed 17 November 2026. Secondary.
@@ -97,3 +98,4 @@ Raast P2P payments / mobile banking users:
 9. Tech-ish. *Safaricom FY26 M-PESA results explained*. 7 May 2026. https://tech-ish.com/2026/05/07/safaricom-fy26-mpesa-results-explained/. Accessed 17 November 2026. Secondary.
 10. State Bank of Pakistan. *Press release on the launch of Raast's first phase*. 11 January 2021. https://www.sbp.org.pk/press/2021/Pr-11-Jan-21.pdf. Accessed 17 November 2026.
 11. Central Bank of Kenya. *Annual reports index*. https://www.centralbank.go.ke/reports/cbk-annual-reports/. Not re-read in November 2026.
+12. Business Recorder. *Govt moves to continue subsidy for Raast QR payments*. 13 November 2026. https://www.brecorder.com/news/40448745/govt-moves-to-continue-subsidy-for-raast-qr-payments. Accessed 17 November 2026. Secondary.
