@@ -7,6 +7,7 @@ import InsightPanel from './components/InsightPanel'
 import ComparativeAnalysis from './components/ComparativeAnalysis'
 import ActionableRecommendations from './components/ActionableRecommendations'
 import MethodologyNote from './components/MethodologyNote'
+import ProgressView from './components/ProgressView'
 import Src from './components/Src'
 import data from '../data/sbp-fy26.json'
 
@@ -36,7 +37,8 @@ function App() {
         </div>
         <p style={{ fontSize: '12px', color: '#7F8C8D', marginTop: '12px' }}>
           Last updated: November 2026. Pakistan payment data: FY26 (July 2025 to June 2026),
-          provisional. Account ownership: Findex 2025, survey year 2024.
+          provisional. Account ownership: Findex 2025, survey year 2024.{' '}
+          <a href="#progress">Progress from FY25 to FY26</a> | <a href="?edition=fy25">FY25 edition (March 2026)</a>
         </p>
       </header>
 
@@ -49,6 +51,7 @@ function App() {
       <DensityComparison data={data.infrastructure} />
       <CashCounter data={data.atm_usage} />
       <AdoptionGapIndex data={data.adoption_gap_index} userAdoption={data.user_adoption} />
+      <ProgressView />
 
       {/* PART 2: THE ANALYSIS */}
       <div className="section-divider">

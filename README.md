@@ -16,6 +16,11 @@ Pakistani adults had an account in the latest Findex survey [2, p. 298].
 The tracker argues access comes first: most adults are not on the rail, and
 most of those who are already pay digitally [2, p. 167].
 
+## Editions
+
+- Current edition (FY26 data): the default page. It includes a "Progress from FY25 to FY26" table with a verdict for each indicator.
+- FY25 edition (first published March 2026): open the page with `?edition=fy25`. Data: `data/sbp-fy25-edition.json`, using the revised FY25 columns of the SBP's FY26 review.
+
 ## What it shows
 
 | Block                 | Content                                         | Metric                  |

@@ -82,6 +82,7 @@ Raast P2P payments / mobile banking users:
 | Version | Date | Change |
 |---------|------|--------|
 | 1.0 | 2026-03-21 | Initial extraction from SBP FY25 Annual Review |
+| 2.2 | 2026-11-18 | FY25 edition restored at ?edition=fy25 with revised FY25 values; Progress from FY25 to FY26 view added |
 | 2.1 | 2026-11-17 | K-FIS narrative report replaces press reports; trust figures corrected; Raast QR subsidy dates and continuation added |
 | 2.0 | 2026-11-17 | Moved to SBP FY26 review; Findex 2025; new index denominator (Raast IDs); corrections listed above; numbered sources on every figure |
 

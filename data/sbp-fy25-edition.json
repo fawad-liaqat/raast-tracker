@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "edition": "FY25 edition (first published March 2026)",
+    "source": "State Bank of Pakistan, Annual Payment Systems Review FY 2025-26: revised FY25 columns and earlier years",
+    "source_id": "R1",
+    "fiscal_year_definition": "FY25 = July 2024 to June 2025",
+    "note": "Values are the FY25 (and earlier) figures as printed in the FY26 review, which revises some FY25 values. The original March 2026 dataset is kept unchanged in data/sbp-fy25.json."
+  },
+  "raast_timeseries": [
+    { "period": "FY23", "total_volume_millions": 147.2, "total_value_pkr_trillions": 3.1, "page": 31 },
+    { "period": "FY24", "total_volume_millions": 496.1, "total_value_pkr_trillions": 11.6, "page": 31 },
+    { "period": "FY25", "total_volume_millions": 1276.0, "p2p_volume_millions": 1266.0, "p2m_volume_millions": 4.9, "total_value_pkr_trillions": 29.6, "page": 31 }
+  ],
+  "retail_payments_fy25": { "total_volume_millions": 9072.6, "total_value_pkr_trillions": 611.6, "volume_yoy_pct": 38, "value_yoy_pct": 11, "digital_share_by_volume_pct": 88, "digital_share_by_value_pct": 29, "otc_value_pkr_trillions": 432.9, "internet_banking_volume_millions": 297.2, "internet_banking_volume_fy24_millions": 223.1, "pages": "7, 9, 12, 27" },
+  "digital_share_history_pct": { "FY23": 78.2, "FY24": 84.5, "FY25": 87.9, "calc": "1 minus (BB agent + bank branch) / total, Table A-4, p. 26" },
+  "infrastructure": {
+    "atm_count": { "fy24": 18957, "fy25": 20250 },
+    "cdm_count": { "fy24": 579, "fy25": 1038 },
+    "pos_devices": { "fy24": 125593, "fy25": 227388, "note": "FY25 includes Soft POS (Table A-1 note), so it is not comparable with FY24" },
+    "pos_merchants": { "fy25": 190823 },
+    "qr_merchants": { "fy24": 516317, "fy25": 1092044 },
+    "ecommerce_merchants": { "fy24": 7816, "fy25": 9584 },
+    "bb_agents": { "fy24": 666682, "fy25": 731814 },
+    "page": 24
+  },
+  "user_adoption": {
+    "mobile_banking_users_m": { "fy24": 18.7, "fy25": 24.1 },
+    "bb_mobile_app_users_m": { "fy24": 58.7, "fy25": 79.2 },
+    "ewallet_users_m": { "fy24": 3.7, "fy25": 5.8 },
+    "page": 24
+  },
+  "atm_usage": {
+    "cash_withdrawal_share_pct": { "fy22": 96.9, "fy23": 97.2, "fy24": 97.5, "fy25": 97.6 },
+    "total_atms_fy25": 20250,
+    "daily_avg_per_atm_fy25": 141,
+    "calc": "Share: cash withdrawals / all ATM transactions, Table A-5, p. 26. Daily average: 1,039.6 million ATM transactions / 20,250 ATMs / 365"
+  },
+  "adoption_gap_index": {
+    "formula": "Raast P2P payments FY25 / mobile banking users FY25",
+    "numerator_millions": 1266.0,
+    "denominator_millions": 24.1,
+    "computed_value": 52.5,
+    "pages": "31 and 24"
+  }
+}
