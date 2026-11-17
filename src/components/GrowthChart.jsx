@@ -3,26 +3,33 @@ import {
   LineChart, Line, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer
 } from 'recharts'
+import Src from './Src'
 
 const BLUE = '#2E86C1'
 const RED = '#C0392B'
 
-const SBP_URL = 'https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY25.pdf'
-
 function GrowthChart({ data, retail }) {
-  const chartData = data.map(d => ({
+  // FY22 is left out of the chart because Raast person to person payments only
+  // started during that year; it stays in the data file.
+  const series = data.filter(d => d.period !== 'FY22')
+  const chartData = series.map(d => ({
     period: d.period,
-    volume: d.volume_millions,
-    value: d.value_pkr_trillions
+    volume: d.total_volume_millions,
+    value: +(d.total_value_pkr_billions / 1000).toFixed(1)
   }))
 
-  const growthMultiple = (data[2].volume_millions / data[0].volume_millions).toFixed(1)
+  const first = series[0]
+  const last = series[series.length - 1]
+  const prev = series[series.length - 2]
+  const volMultiple = (last.total_volume_millions / first.total_volume_millions).toFixed(1)
+  const yoy = (last.total_volume_millions / prev.total_volume_millions).toFixed(1)
+  const p2mShare = (last.p2m_volume_millions / last.total_volume_millions * 100).toFixed(1)
 
   return (
     <section className="block">
       <div className="block-header">
-        <div className="block-label">Block A — Infrastructure Growth</div>
-        <h2>Raast P2P Transactions: The Supply Side Success Story</h2>
+        <div className="block-label">Block A: Infrastructure Growth</div>
+        <h2>Raast Transactions: The Rail Works</h2>
       </div>
 
       <div className="chart-container">
@@ -43,8 +50,8 @@ function GrowthChart({ data, retail }) {
             />
             <Tooltip
               formatter={(value, name) => {
-                if (name === 'volume') return [`${value.toLocaleString()}M`, 'Transaction Volume']
-                return [`PKR ${value}T`, 'Transaction Value']
+                if (name === 'volume') return [`${value.toLocaleString()}M`, 'Transaction volume']
+                return [`PKR ${value}T`, 'Transaction value']
               }}
               contentStyle={{ fontSize: 12, borderRadius: 6 }}
             />
@@ -59,24 +66,36 @@ function GrowthChart({ data, retail }) {
           </LineChart>
         </ResponsiveContainer>
       </div>
+      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px' }}>
+        Chart: all Raast transactions (bulk, person to person and person to merchant), FY23 to FY26.
+        FY26 is provisional. Source: SBP Table A-15 <Src id="R1" p="31" />
+      </div>
 
       <div className="insight-box">
         <span className="insight-label analysis">Analysis</span>
         <p>
-          Raast P2P volumes grew <strong>{growthMultiple}x</strong> in three years (147M to 1.28B).
-          Transaction value grew from PKR 3.1T (FY23) to 11.5T (FY24) to 29.6T (FY25) — a 9.5x value increase.
-          Total retail digital transactions reached 9.1 billion, with mobile banking apps alone processing 6.2 billion (52% YoY growth).
-          <a href={SBP_URL} target="_blank" rel="noopener noreferrer" className="source-tag">SBP FY25</a>
+          Raast moved {last.total_volume_millions.toLocaleString()} million transactions worth
+          PKR {(last.total_value_pkr_billions / 1000).toFixed(1)} trillion in FY26, against
+          {' '}{prev.total_volume_millions.toLocaleString()} million in FY25 <Src id="R1" p="31" />.
+          That is {yoy}x in one year and {volMultiple}x since FY23 (my calculation from the same table).
+          Across all channels, retail payments reached 14.3 billion transactions worth PKR 673 trillion,
+          and mobile phone channels carried 11.1 billion of them, up 79% <Src id="R1" p="7" />.
+        </p>
+        <p>
+          Merchants are the thin part. Person to merchant payments on Raast rose from 4.9 million to
+          182.5 million, but that is still {p2mShare}% of Raast volume (my calculation) <Src id="R1" p="31" />.
         </p>
       </div>
 
       <div className="insight-box warning">
-        <span className="insight-label warning">Critical distinction</span>
+        <span className="insight-label warning">Count is not value</span>
         <p>
-          The 88% digital share is <strong>by transaction volume, not value</strong>. By value, the digital share is
-          approximately 29% (Q2 FY25). High-frequency, low-value transactions (P2P transfers, airtime top-ups, utility bills)
-          inflate the volume share. Cash dominates high-value activity: retail commerce, wholesale trade, real estate, informal markets.
-          <a href="https://www.sbp.org.pk/psd/pdf/PS-Review-Q2FY25.pdf" target="_blank" rel="noopener noreferrer" className="source-tag">SBP Q2 FY25</a>
+          Digital channels carried {retail.digital_share_by_volume_pct.fy26}% of retail payments by count in FY26,
+          up from {retail.digital_share_by_volume_pct.fy25}% in FY25. By value the digital share was
+          {' '}{retail.digital_share_by_value_pct.fy26}%, up from {retail.digital_share_by_value_pct.fy25}% <Src id="R1" p="7" />.
+          About PKR 415.7 trillion of PKR 672.7 trillion, roughly 62%, still moved over the counter at
+          bank branches and agents (my calculation) <Src id="R1" p="9" />. Small, frequent payments
+          went digital first. Large payments mostly have not.
         </p>
       </div>
     </section>

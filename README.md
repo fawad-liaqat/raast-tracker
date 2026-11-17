@@ -1,65 +1,60 @@
 # Raast Adoption Gap Tracker
 
-An interactive, single page dashboard mapping the distance between
-Pakistan's digital payment infrastructure growth and actual behavioral
-adoption of cashless transactions.
+A single page dashboard on the distance between Pakistan's digital payment
+rail and the people who actually use it.
 
-**Live Demo**: [raast-tracker](https://fawad-liaqat.github.io/raast-tracker/)
+**Live demo**: [raast-tracker](https://fawad-liaqat.github.io/raast-tracker/)
 
-## The Core Question
+Last updated: November 2026 (data version 2.0, SBP FY26 provisional figures).
 
-Raast transaction volumes grew 8.7x in three years (147M to 1.28B).
-Digital channels now carry 88% of all retail payments by volume.
-Yet 98% of ATM usage remains cash withdrawal, and over 60% of
-economic activity is still cash based.
+## The core question
 
-This dashboard visualizes that gap.
+Raast moved 2,755.2 million transactions in FY26 (July 2025 to June 2026),
+up from 1,276.0 million in FY25 [1, p. 31]. Digital channels carried 92% of
+retail payments by count but 38% by value [1, p. 7]. Yet only 27% of
+Pakistani adults had an account in the latest Findex survey [2, p. 298].
+The tracker argues access comes first: most adults are not on the rail, and
+most of those who are already pay digitally [2, p. 167].
 
-## What It Shows
+## What it shows
 
-| Block                 | Content                                    | Metric         |
-| --------------------- | ------------------------------------------ | -------------- |
-| Infrastructure Growth | Raast volume/value FY23-FY25               | Dual axis line |
-| Acceptance Density    | POS/QR terminal density                    | Bar chart      |
-| Counter Narrative     | ATM cash withdrawal rate                   | Big number     |
-| Adoption Gap Index    | Digital transactions / registered accounts | Computed       |
+| Block                 | Content                                         | Metric                  |
+| --------------------- | ----------------------------------------------- | ----------------------- |
+| Infrastructure growth | Raast volume and value, FY23 to FY26            | Dual axis line          |
+| Acceptance density    | ATMs, CDMs, POS devices, QR merchants, FY25, FY26 | Bar chart               |
+| Counter narrative     | Share of ATM transactions that are withdrawals  | Calculated share        |
+| Adoption gap index    | Raast P2P payments per registered Raast ID      | Calculated (author)     |
 
-## Data Sources
+## Data
 
-All data extracted from publicly available State Bank of Pakistan
-reports. See [METHODOLOGY.md](./METHODOLOGY.md) for full details.
+- `data/sbp-fy26.json`: current dataset (version 2.0). Every value has a page reference.
+- `data/sbp-fy25.json`: the March 2026 dataset (version 1.0), kept unchanged for the record.
 
-- SBP Annual Payment Systems Review FY25 (November 2025)
-- SBP Quarterly Payment Systems Reviews Q1-Q3 FY25
-- SBP Governor's Annual Report FY25
+See [METHODOLOGY.md](./METHODOLOGY.md) for formulas, corrections and limitations.
 
-Raw data: [`/data/sbp-fy25.json`](./data/sbp-fy25.json)
+## Sources
 
-## Run Locally
+1. State Bank of Pakistan. *Annual Payment Systems Review FY 2025-26* (provisional). October 2026. https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY26.pdf. Accessed 17 November 2026. Primary.
+2. World Bank. *The Global Findex Database 2025* (survey year 2024). 2025. https://www.worldbank.org/en/publication/globalfindex. Accessed 17 November 2026. Primary.
+
+The dashboard's Sources section lists all eleven sources used on the page.
+
+## Run locally
+
+From the repository folder, in a normal (non administrator) terminal:
 
 ```bash
-git clone https://github.com/[your-username]/raast-tracker.git
-cd raast-tracker
-npm install
+npm ci
 npm run dev
 ```
 
-## Tech Stack
+## Tech stack
 
-React (Vite) + Recharts + Tailwind CSS. Deployed on Github Pages.
-
-## Methodology
-
-The Adoption Gap Index is computed as:
-
-(Total Raast P2P Transactions / Total Registered Digital Accounts) x 100
-
-Full methodology, assumptions, and known limitations are documented
-in [METHODOLOGY.md](./METHODOLOGY.md).
+React (Vite) and Recharts. Deployed on GitHub Pages.
 
 ## Author
 
-Fawad Liaqat | BSFT, NUCES FAST Islamabad
+Fawad Liaqat. Feedback and other readings of the data are welcome.
 
 ## License
 

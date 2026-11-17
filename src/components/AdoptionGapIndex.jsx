@@ -1,29 +1,53 @@
 import React from "react";
+import Src from "./Src";
 
 const BLUE = "#2E86C1";
-const SBP_URL =
-  "https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY25.pdf";
+
+const tile = {
+  background: "#D4E6F1",
+  borderRadius: "6px",
+  padding: "16px",
+  textAlign: "center",
+};
+const tileLabel = {
+  fontSize: "11px",
+  color: "#7F8C8D",
+  textTransform: "uppercase",
+  letterSpacing: "0.5px",
+};
+
+function growth(a, b) {
+  return `+${((b / a - 1) * 100).toFixed(0)}%`;
+}
 
 function AdoptionGapIndex({ data, userAdoption }) {
-  const computedValue = data.computed_value;
+  const primary = data.primary;
+  const cmp = data.comparison_mobile_banking_users;
+  const rows = [
+    ["Mobile banking users", userAdoption.mobile_banking_users_m],
+    ["Branchless banking app users", userAdoption.bb_mobile_app_users_m],
+    ["EMI e-wallet users", userAdoption.ewallet_users_m],
+    ["Internet banking users", userAdoption.internet_banking_users_m],
+    ["Call centre / IVR banking users", userAdoption.ivr_banking_users_m],
+  ];
 
   return (
     <section className="block">
       <div className="block-header">
-        <div className="block-label">Block D — Adoption Gap Index</div>
-        <h2>Measuring the Distance Between Infrastructure and Behavior</h2>
+        <div className="block-label">Block D: Adoption Gap Index (my calculation)</div>
+        <h2>How Often a Registered Raast User Pays</h2>
       </div>
 
       <div className="metric-card">
         <div className="metric-label">
-          Raast Transactions per Registered Account (Annual)
+          Raast person to person payments per registered Raast ID, FY26
         </div>
         <div className="big-number" style={{ color: BLUE }}>
-          {computedValue}
+          {primary.computed_value}
         </div>
         <p style={{ fontSize: "13px", color: "#7F8C8D", marginTop: "12px" }}>
-          transactions per mobile banking account per year (~
-          {(computedValue / 12).toFixed(1)}/month)
+          payments per ID per year (about {(primary.computed_value / 12).toFixed(1)} a month).
+          This is my calculation, not an SBP figure.
         </p>
       </div>
 
@@ -35,152 +59,81 @@ function AdoptionGapIndex({ data, userAdoption }) {
           marginTop: "16px",
         }}
       >
-        <div
-          style={{
-            background: "#D4E6F1",
-            borderRadius: "6px",
-            padding: "16px",
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              fontSize: "11px",
-              color: "#7F8C8D",
-              textTransform: "uppercase",
-              letterSpacing: "0.5px",
-            }}
-          >
-            Numerator
-          </div>
+        <div style={tile}>
+          <div style={tileLabel}>Numerator</div>
           <div style={{ fontSize: "26px", fontWeight: "700", color: BLUE }}>
-            1,276M
+            {primary.numerator_millions.toLocaleString()}M
           </div>
           <div style={{ fontSize: "11px", color: "#7F8C8D" }}>
-            Raast P2P Transactions (FY25)
+            Raast P2P payments, FY26 <Src id="R1" p="31" />
           </div>
         </div>
-        <div
-          style={{
-            background: "#D4E6F1",
-            borderRadius: "6px",
-            padding: "16px",
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              fontSize: "11px",
-              color: "#7F8C8D",
-              textTransform: "uppercase",
-              letterSpacing: "0.5px",
-            }}
-          >
-            Denominator (Option B)
-          </div>
+        <div style={tile}>
+          <div style={tileLabel}>Denominator</div>
           <div style={{ fontSize: "26px", fontWeight: "700", color: BLUE }}>
-            24.1M
+            {primary.denominator_millions}M
           </div>
           <div style={{ fontSize: "11px", color: "#7F8C8D" }}>
-            Mobile Banking App Users (FY25)
+            Raast P2P IDs, end June 2026 <Src id="R1" p="11" />
           </div>
         </div>
       </div>
 
       <div className="insight-box">
-        <span className="insight-label analysis">Why Option B</span>
+        <span className="insight-label analysis">Why this denominator</span>
         <p>
-          Mobile banking app users (24.1M) are the primary Raast-enabled account
-          base. Combining mobile banking 24.1M + BB apps 79.2M + e-wallets 5.8M
-          = 109.1M contains significant overlap between categories and would
-          yield a misleadingly low 11.7 transactions per account. Unique
-          transacting account data is not publicly available from SBP.
-          <a
-            href={SBP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="source-tag"
-          >
-            SBP FY25
-          </a>
+          The FY26 review is the first one I have used that prints the number of registered Raast P2P IDs
+          (49.2 million) <Src id="R1" p="11" />. That is a closer match to the people who can use Raast than
+          mobile banking users, which version 1.0 of this tracker used. For comparison on the old basis:
+          P2P payments per mobile banking user were {cmp.fy25.computed_value} in FY25 and {cmp.fy26.computed_value} in
+          FY26 ({cmp.fy25.numerator_millions.toLocaleString()}M / {cmp.fy25.denominator_millions}M and
+          {" "}{cmp.fy26.numerator_millions.toLocaleString()}M / {cmp.fy26.denominator_millions}M) <Src id="R1" p="9" /> <Src id="R1" p="31" />.
+        </p>
+      </div>
+
+      <div className="insight-box warning">
+        <span className="insight-label warning">Correction to version 1.0</span>
+        <p>
+          Version 1.0 (March 2026) used 1,276 million as Raast P2P transactions for FY25. That is the total of all
+          Raast transactions. P2P alone was 1,266 million <Src id="R1" p="31" />, so the FY25 index on the old
+          basis is 52.5, not 52.9.
         </p>
       </div>
 
       <div className="insight-box warning">
         <span className="insight-label warning">What the average hides</span>
         <p>
-          52.9 annual transactions per account (~1 per week) sounds reasonable.
-          But this is an average across{" "}
-          <strong>all registered users, including dormant accounts</strong>. An
-          estimated 54 million bank deposit accounts hold balances below PKR
-          5,000. A small fraction of active accounts likely drives the majority
-          of Raast volume, while millions of registered accounts never transact
-          digitally.
-        </p>
-        <p>
-          The gap is not between infrastructure and the average user. It is
-          between infrastructure and the{" "}
-          <strong>majority of registered accounts that remain inactive</strong>.
+          About 52 payments a year sounds like one a week. But it is an average across every registered ID,
+          including people who registered once and never used it. SBP does not publish the number of active
+          Raast users, so the spread behind the average is unknown. A small active group could be driving
+          most of the volume.
         </p>
       </div>
 
       <table className="data-table">
         <thead>
           <tr>
-            <th>User Category</th>
-            <th>FY24</th>
+            <th>Digital channel users (millions)</th>
             <th>FY25</th>
+            <th>FY26</th>
             <th>Growth</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Mobile Banking App Users</td>
-            <td>{userAdoption.mobile_banking_users_m.fy24}M</td>
-            <td>{userAdoption.mobile_banking_users_m.fy25}M</td>
-            <td>
-              +
-              {(
-                (userAdoption.mobile_banking_users_m.fy25 /
-                  userAdoption.mobile_banking_users_m.fy24 -
-                  1) *
-                100
-              ).toFixed(0)}
-              %
-            </td>
-          </tr>
-          <tr>
-            <td>BB Mobile App Users</td>
-            <td>{userAdoption.bb_mobile_app_users_m.fy24}M</td>
-            <td>{userAdoption.bb_mobile_app_users_m.fy25}M</td>
-            <td>
-              +
-              {(
-                (userAdoption.bb_mobile_app_users_m.fy25 /
-                  userAdoption.bb_mobile_app_users_m.fy24 -
-                  1) *
-                100
-              ).toFixed(0)}
-              %
-            </td>
-          </tr>
-          <tr>
-            <td>E-Wallet Users</td>
-            <td>{userAdoption.ewallet_users_m.fy24}M</td>
-            <td>{userAdoption.ewallet_users_m.fy25}M</td>
-            <td>
-              +
-              {(
-                (userAdoption.ewallet_users_m.fy25 /
-                  userAdoption.ewallet_users_m.fy24 -
-                  1) *
-                100
-              ).toFixed(0)}
-              %
-            </td>
-          </tr>
+          {rows.map(([name, v]) => (
+            <tr key={name}>
+              <td>{name}</td>
+              <td>{v.fy25}</td>
+              <td>{v.fy26}</td>
+              <td>{growth(v.fy25, v.fy26)}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
+      <div style={{ fontSize: "11px", color: "#7F8C8D", marginTop: "6px" }}>
+        Registered users at end June; categories overlap, since one person can hold several. Growth is my
+        calculation. Source: SBP Payment Systems Snapshot <Src id="R1" p="9" />
+      </div>
     </section>
   );
 }

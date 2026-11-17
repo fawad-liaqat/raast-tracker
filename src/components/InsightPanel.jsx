@@ -1,108 +1,102 @@
 import React from 'react'
-
-const KFIS_URL = 'https://portal.karandaaz.com.pk'
-const SBP_URL = 'https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY25.pdf'
+import Src from './Src'
 
 function InsightPanel() {
   return (
     <section className="block">
       <div className="block-header">
-        <div className="block-label">Three-Layer Framework</div>
-        <h2>The Behavioral Last Mile: Three Compounding Barriers</h2>
+        <div className="block-label">Framework: access first, then use</div>
+        <h2>Why the Gap Exists: Access Comes Before Behaviour</h2>
       </div>
 
       <p style={{ fontSize: '14px', color: '#566573', marginBottom: '24px', lineHeight: '1.7' }}>
-        The gap between 88% digital volume share and a cash-dominant economy is not an infrastructure
-        problem. It is a demand-side behavioral problem with three compounding layers. Each barrier
-        reinforces the others: a person who distrusts banks, has no incentive to switch from cash,
-        and cannot navigate a digital interface faces all three simultaneously.
+        Version 1.0 of this tracker framed the gap as a behaviour problem among users. The newer evidence
+        points somewhere else first. Only 27% of Pakistani adults have an account, and 25% made or received
+        a digital payment <Src id="R2" p="298" />. Findex notes that about 90% of Pakistani account owners
+        use digital payments, though on a small base <Src id="R2" p="167" />. So the first barrier is getting
+        people onto the rail at all. Trust, incentives and design then decide how much they use it.
       </p>
 
-      {/* Layer 1: Trust Deficit */}
+      {/* Layer 1: Access */}
       <div className="framework-layer">
         <div className="layer-header">
           <div className="layer-number">1</div>
-          <div className="layer-title">Trust Deficit</div>
+          <div className="layer-title">Access: most adults are not on the rail</div>
         </div>
         <div className="layer-evidence">
-          <strong>Core finding:</strong> People reject digital payments because they distrust the institutions,
-          regardless of whether the infrastructure exists.
+          <strong>Evidence:</strong> Account ownership is 27% in Pakistan, against 89% in India and 90% in Kenya <Src id="R2" p="297" /> <Src id="R2" p="298" />.
+          Pakistan's gender gap in account ownership is 30 percentage points <Src id="R2" p="98" />, and the gap in
+          mobile phone ownership is 65 points <Src id="R2" p="25" />. Pakistan's own survey tells the same story:
+          35% of adults financially included in 2024, 56% of men and 14% of women <Src id="R3" /> <Src id="R4" />.
         </div>
         <div className="layer-evidence">
-          <strong>Evidence:</strong> Only <strong>9%</strong> of excluded adults trust banks.
-          Only <strong>8%</strong> trust mobile money providers. Just <strong>36%</strong> of all adults
-          report comfort using any financial service. <strong>85%</strong> of excluded adults rely on
-          family and friends for credit, not because formal options are unavailable, but because the
-          informal system operates on trust relationships that institutions cannot replicate.
-          <a href={KFIS_URL} target="_blank" rel="noopener noreferrer" className="source-tag">K-FIS 2024</a>
+          <strong>Why the two numbers differ:</strong> Findex (27%) and the Karandaaz survey (35%) use different
+          samples and definitions. I use Findex for comparisons with other countries and quote the Karandaaz
+          figure for Pakistan detail.
         </div>
         <div className="layer-evidence">
-          <strong>Mechanism:</strong> Cash transactions offer anonymity and immediacy. For the estimated 40% of
-          GDP operating informally, digital transactions create a record trail perceived as tax exposure.
-          This is not irrational. It is a rational response to an incentive structure where formalization
-          carries costs without proportionate benefits for small operators.
-        </div>
-        <div className="layer-comparison">
-          <strong>Comparative:</strong> Kenya's M-Pesa overcame distrust through agent networks—local shopkeepers
-          embedded in community trust relationships. Users trusted the person, not the institution.
-          Pakistan's Raast is app-based and institution-facing, bypassing this intermediary trust layer entirely.
+          <strong>Phones:</strong> 40% of Pakistani women without a phone name family disapproval as a reason;
+          no men do <Src id="R2" p="32" />. Any product that assumes a personal smartphone starts by missing
+          many of these women.
         </div>
       </div>
 
-      {/* Layer 2: Incentive Misalignment */}
+      {/* Layer 2: Trust */}
       <div className="framework-layer">
         <div className="layer-header">
           <div className="layer-number red">2</div>
-          <div className="layer-title">Incentive Misalignment</div>
+          <div className="layer-title">Trust</div>
         </div>
         <div className="layer-evidence">
-          <strong>Core finding:</strong> The incentive structure actively favors cash even when digital alternatives exist.
-        </div>
-        <div className="layer-evidence">
-          <strong>Evidence:</strong> The <strong>98% ATM cash withdrawal rate</strong> is revealed preference:
-          people who already have accounts choose to convert digital money to physical cash before spending it.
-          Merchants face MDR fees of 1.5-2.5% per digital transaction. Cash carries zero fee. BISP/Ehsaas
-          G2P payments have high adoption rates precisely because the incentive structure is forced, not voluntary.
-          <a href={SBP_URL} target="_blank" rel="noopener noreferrer" className="source-tag">SBP FY25</a>
-        </div>
-        <div className="layer-evidence">
-          <strong>Mechanism:</strong> For merchants, digital payment acceptance creates two costs: the MDR fee
-          and the tax documentation trail. For consumers, inconsistent merchant acceptance of digital payments
-          creates social friction at the point of sale. The path of least resistance remains cash for both parties.
+          <strong>Evidence:</strong> In the 2024 Karandaaz survey, as reported in the press, 9% of excluded adults said
+          they trust banks and 8% trust mobile money providers. 36% of adults feel comfortable using any
+          financial service, and 85% rely on informal sources, mainly family and friends, for credit <Src id="R3" />.
         </div>
         <div className="layer-comparison">
-          <strong>Comparative:</strong> India mandated zero MDR on UPI transactions below Rs 2,000 in 2019.
-          This single policy removed the merchant penalty entirely. UPI grew from 8.7B to 228.3B transactions
-          in six years. Pakistan has not implemented equivalent MDR relief.
+          <strong>Comparative (hypothesis):</strong> Kenya's M-Pesa grew through local agents whom users already
+          knew. Pakistan has 837,244 branchless banking agents <Src id="R1" p="24" />, but Raast itself is reached
+          through apps. Whether agents could act as the trusted bridge to Raast is a question, not a finding.
         </div>
       </div>
 
-      {/* Layer 3: Literacy Friction */}
+      {/* Layer 3: Incentives */}
       <div className="framework-layer">
         <div className="layer-header">
-          <div className="layer-number amber">3</div>
-          <div className="layer-title">Literacy Friction</div>
+          <div className="layer-number red">3</div>
+          <div className="layer-title">Incentives for merchants and users</div>
         </div>
         <div className="layer-evidence">
-          <strong>Core finding:</strong> Even willing adopters face friction from interfaces designed for digitally literate users.
-        </div>
-        <div className="layer-evidence">
-          <strong>Evidence:</strong> K-FIS 2024 shows a significant urban-rural gap in digital financial services
-          usage <em>even at equal access levels</em>. Phone ownership: <strong>82%</strong> men vs <strong>46%</strong> women.
-          Account ownership: <strong>56%</strong> men vs <strong>14%</strong> women. The gap is not only about infrastructure;
-          it is a gender equity problem mediated through technology access and literacy.
-          <a href={KFIS_URL} target="_blank" rel="noopener noreferrer" className="source-tag">K-FIS 2024</a>
-        </div>
-        <div className="layer-evidence">
-          <strong>Mechanism:</strong> Banking app Urdu interfaces are poor translations of English originals.
-          USSD menus require multi-step memorization. Biometric verification fails for manual laborers with
-          worn fingerprints. Raast is smartphone-dependent—feature phone users, Urdu-primary users, and
-          low digital literacy populations are structurally excluded by design assumptions, not infrastructure absence.
+          <strong>Evidence:</strong> Among people who already bank, 97.6% of ATM transactions are cash withdrawals
+          (my calculation) <Src id="R1" p="26" />. Merchant payments are 6.6% of Raast volume (my calculation) <Src id="R1" p="31" />.
+          When incentives changed, merchants signed up: QR merchants more than tripled within a year under the
+          Cashless Pakistan subsidy <Src id="R1" p="7" />.
         </div>
         <div className="layer-comparison">
-          <strong>Comparative:</strong> India's BHIM app launched in 13 regional languages. UPI 123PAY (2022)
-          enabled feature phone UPI transactions via IVR, extending access beyond smartphone users entirely.
-          Pakistan's Raast ecosystem has not implemented equivalent accessibility measures.
+          <strong>Comparative:</strong> India removed the merchant discount rate on UPI and RuPay payments from
+          1 January 2020 <Src id="R7" />. Merchant payments are now 63% of UPI volume <Src id="R6" />. Other
+          policies changed at the same time, so this does not isolate the effect of zero MDR.
+        </div>
+      </div>
+
+      {/* Layer 4: Design and literacy */}
+      <div className="framework-layer">
+        <div className="layer-header">
+          <div className="layer-number amber">4</div>
+          <div className="layer-title">Design and literacy</div>
+        </div>
+        <div className="layer-evidence">
+          <strong>Evidence:</strong> In the Karandaaz survey, self rated digital ability scored 65 for men and 48 for
+          women <Src id="R4" />. Findex reports difficulty reading or typing as a common reason for not owning a
+          phone in South Asia <Src id="R2" p="32" />. Pakistan already has 46.1 million registered call centre and
+          IVR banking users <Src id="R1" p="9" />, so voice channels are not new to banks here.
+        </div>
+        <div className="layer-evidence">
+          <strong>Mechanism (hypothesis):</strong> Raast is reached through bank and wallet apps. People with a basic
+          phone, low literacy or limited English face more steps. I have not measured this directly.
+        </div>
+        <div className="layer-comparison">
+          <strong>Comparative:</strong> India's central bank launched UPI123Pay in 2022 so that feature phone users
+          could make UPI payments without a smartphone <Src id="R8" />.
         </div>
       </div>
     </section>

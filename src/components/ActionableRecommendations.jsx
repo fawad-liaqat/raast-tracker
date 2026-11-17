@@ -1,65 +1,57 @@
 import React from 'react'
+import Src from './Src'
 
+// Recommendations are the author's proposals. Precedents carry a source marker
+// where one was read; where none was, the card says so.
 function ActionableRecommendations() {
   const recommendations = [
     {
-      title: 'Eliminate MDR on transactions below PKR 5,000',
+      title: 'Bring people without an account onto Raast first',
+      implementer: 'SBP, banks, branchless banking providers',
+      mechanism: 'Measure and target account opening among women and rural adults, using the agent network and biometric account opening that already exist.',
+      effect: 'Raises the share of adults who can use the rail at all. Only 27% of adults had an account in 2024.',
+      precedent: (<>The Eid cattle market drive in 2026 opened about 12,500 new accounts alongside QR acceptance <Src id="R1" p="21" />. Findex: <Src id="R2" p="298" />.</>),
+    },
+    {
+      title: 'Review merchant fees on small digital payments',
       implementer: 'SBP',
-      mechanism: 'Regulatory mandate removing merchant discount rate on small digital transactions, covering most retail purchases.',
-      effect: 'Removes the direct cost penalty that makes cash preferable. Accelerates merchant acceptance of Raast and QR payments for everyday transactions.',
-      precedent: "India's RBI mandated zero MDR on UPI below Rs 2,000 (2019). UPI transactions grew 26x from 8.7B to 228.3B between 2019 and 2025.",
-      precedentUrl: 'https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics',
-      precedentLabel: 'NPCI UPI Statistics'
+      mechanism: 'Publish what merchants pay to accept Raast QR and card payments, and test removing fees on small payments.',
+      effect: 'Lowers the cost of accepting digital payments for small shops, where use per QR merchant is still low.',
+      precedent: (<>India removed MDR on UPI and RuPay payments from January 2020 <Src id="R7" />. UPI volume rose from about 45.96 billion in FY 2021-22 to 241.62 billion in FY 2025-26 <Src id="R5" />, though many policies changed together.</>),
     },
     {
-      title: 'Build feature phone Raast access via USSD/IVR',
-      implementer: 'SBP + Banks',
-      mechanism: 'Develop USSD and IVR-based Raast transaction channels that do not require smartphones or internet connections.',
-      effect: 'Extends Raast access to the 54% of women without phones (via shared feature phones) and rural populations with limited smartphone penetration.',
-      precedent: "India's UPI 123PAY (2022) enables feature phone UPI transactions via missed call, IVR, and proximity NFC, reaching users beyond the smartphone boundary.",
-      precedentUrl: 'https://www.npci.org.in/what-we-do/upi/upi-123pay',
-      precedentLabel: 'UPI 123PAY'
+      title: 'Build a basic phone route into Raast',
+      implementer: 'SBP and banks',
+      mechanism: 'USSD and IVR access to Raast payments that does not need a smartphone or internet.',
+      effect: 'Reaches people with basic phones. In the Karandaaz survey only 46% of women owned a phone, against 82% of men.',
+      precedent: (<>India's UPI123Pay for feature phones (2022) <Src id="R8" />. Karandaaz figures: <Src id="R3" />.</>),
     },
     {
-      title: 'Restructure agent commissions to incentivize digital facilitation',
-      implementer: 'SBP + BB Providers',
-      mechanism: 'Redesign branchless banking agent commission structure to reward facilitating digital transactions (Raast P2P, merchant payments) over cash-in/cash-out cycling.',
-      effect: 'Converts 731,814 agents from cash economy access points into digital payment facilitators embedded in community trust networks.',
-      precedent: "Kenya's M-Pesa agent commission model aligned agent economic interests with adoption growth. Agents earned revenue by promoting mobile money, not by cycling cash.",
-      precedentUrl: 'https://www.centralbank.go.ke/reports/cbk-annual-reports/',
-      precedentLabel: 'CBK Annual Reports'
+      title: 'Pay agents for helping people make digital payments',
+      implementer: 'SBP and branchless banking providers',
+      mechanism: 'Reward agents for helping customers make Raast and merchant payments, not only for cash in and cash out.',
+      effect: 'Uses 837,244 agents, many already known in their communities, as guides to digital use.',
+      precedent: (<>Kenya's agent model is often cited here. I have not re-checked a primary source for it this round <Src id="R11" />. Agent count: <Src id="R1" p="24" />.</>),
     },
     {
-      title: 'Create tax incentive for documented digital spending',
-      implementer: 'FBR',
-      mechanism: 'Offer 0.5-1% tax rebate on documented digital retail transactions, converting perceived cost of formalization (tax exposure) into a benefit (tax reduction).',
-      effect: 'Shifts consumer incentive calculus from "digital = tax visibility risk" to "digital = tax saving." Particularly effective for salaried taxpayers.',
-      precedent: "South Korea's tax deduction for card payments accelerated the cash-to-card transition in the early 2000s, dramatically increasing formal transaction volume.",
-      precedentUrl: null,
-      precedentLabel: 'South Korea Card Tax Deduction Program'
-    },
-    {
-      title: 'Mandate Urdu-first financial app design standards',
+      title: 'Set Urdu first and voice first design standards',
       implementer: 'SBP',
-      mechanism: 'Issue binding design guidelines requiring all Raast-enabled apps to provide native Urdu interfaces (not translations), simplified flows requiring fewer than four steps, and voice-guided options.',
-      effect: 'Reduces literacy friction for the estimated 70% of Pakistan population whose primary language is not English. Addresses the urban-rural DFS usage gap that persists at equal access levels.',
-      precedent: "India's BHIM app design standards for regional languages demonstrated that deliberate interface design can materially reduce literacy barriers to digital payment adoption.",
-      precedentUrl: 'https://www.bhimupi.org.in/',
-      precedentLabel: 'BHIM UPI'
-    }
+      mechanism: 'Require native Urdu flows, fewer steps, and voice guidance in Raast enabled apps.',
+      effect: 'Reduces friction for people with low literacy or limited English.',
+      precedent: (<>No verified precedent cited. Self rated digital ability in the Karandaaz survey: 65 for men, 48 for women <Src id="R4" />.</>),
+    },
   ]
 
   return (
     <section className="block">
       <div className="block-header">
-        <div className="block-label">Evidence-Based Interventions</div>
-        <h2>Five Actions That Close the Behavioral Gap</h2>
+        <div className="block-label">Proposals</div>
+        <h2>Five Actions Worth Testing</h2>
       </div>
 
       <p style={{ fontSize: '13px', color: '#566573', marginBottom: '24px', lineHeight: '1.6' }}>
-        Each recommendation targets a specific layer of the behavioral last mile, specifies who
-        implements it, describes the mechanism, projects the expected effect, and cites the international
-        precedent that demonstrates it works.
+        These are my proposals, ordered access first, then use. Each names who would act, how it would work,
+        and the evidence behind it. None has been tested in Pakistan by me.
       </p>
 
       {recommendations.map((rec, i) => (
@@ -68,18 +60,11 @@ function ActionableRecommendations() {
           <div className="rec-title">{rec.title}</div>
           <div className="rec-meta">
             <span className="rec-tag implementer">{rec.implementer}</span>
-            {rec.precedentUrl ? (
-              <a href={rec.precedentUrl} target="_blank" rel="noopener noreferrer" className="rec-tag precedent" style={{ textDecoration: 'none' }}>
-                {rec.precedentLabel}
-              </a>
-            ) : (
-              <span className="rec-tag precedent">{rec.precedentLabel}</span>
-            )}
           </div>
           <div className="rec-description">
             <p style={{ marginBottom: '6px' }}><strong>Mechanism:</strong> {rec.mechanism}</p>
             <p style={{ marginBottom: '6px' }}><strong>Expected effect:</strong> {rec.effect}</p>
-            <p><strong>Precedent:</strong> {rec.precedent}</p>
+            <p><strong>Evidence:</strong> {rec.precedent}</p>
           </div>
         </div>
       ))}
@@ -87,12 +72,8 @@ function ActionableRecommendations() {
       <div className="insight-box success" style={{ marginTop: '20px' }}>
         <span className="insight-label action">The core lesson</span>
         <p>
-          Infrastructure is necessary. It is not sufficient. India and Kenya did not achieve mass digital
-          payment adoption because they built better technology. They achieved it because they
-          <strong> deliberately designed incentive structures, trust mechanisms, and accessible interfaces</strong> that
-          converted infrastructure into behavior. Pakistan's Raast is architecturally sound but behaviorally
-          incomplete. These five interventions target the specific demand-side barriers that deployment alone
-          cannot resolve.
+          Infrastructure is necessary but not sufficient. Pakistan's rail is growing fast. The next gains depend on
+          getting more people an account and a way to pay that fits the phone they own.
         </p>
       </div>
     </section>

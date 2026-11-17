@@ -1,84 +1,12 @@
 import React from "react";
-
-const sources = [
-  {
-    name: "SBP Annual Payment Systems Review FY25",
-    description:
-      "Primary source for all Pakistan payment transaction, infrastructure, and user adoption data.",
-    url: "https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY25.pdf",
-    date: "Published November 2025",
-  },
-  {
-    name: "SBP Quarterly Payment Systems Review Q2 FY25",
-    description:
-      "Supplementary quarterly data. Source for digital value share (29%) distinction.",
-    url: "https://www.sbp.org.pk/psd/pdf/PS-Review-Q2FY25.pdf",
-    date: "Published 2025",
-  },
-  {
-    name: "SBP Quarterly Reviews Index",
-    description:
-      "Portal for all SBP quarterly payment systems reports including Q3 FY25.",
-    url: "https://www.sbp.org.pk/psd/reports/index.htm",
-    date: "Updated quarterly",
-  },
-  {
-    name: "SBP Governor's Annual Report FY25",
-    description:
-      "Macro context: GDP growth, inflation impact on cash holding, regulatory developments.",
-    url: "https://www.sbp.org.pk/reports/annual/Gov-AR/pdf/2025/Gov-AR.pdf",
-    date: "Published 2025",
-  },
-  {
-    name: "Karandaaz K-FIS 2024 (Financial Inclusion Survey)",
-    description:
-      "Source for trust metrics (9%/8%), financial inclusion (35%), gender gap, regional variation, informal credit data.",
-    url: "https://portal.karandaaz.com.pk",
-    date: "2024 survey wave, published June 2025",
-  },
-  {
-    name: "NPCI UPI Ecosystem Statistics",
-    description:
-      "Source for all India UPI data: 228.3B transactions, 698M daily average, growth trajectory.",
-    url: "https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics",
-    date: "Updated monthly",
-  },
-  {
-    name: "World Bank Global Findex Database",
-    description:
-      "Cross-country financial inclusion comparison: Pakistan 35%, India 77.5%, Kenya 82%. Global benchmark 79%.",
-    url: "https://www.worldbank.org/en/publication/globalfindex",
-    date: "2025 edition (2024 survey wave)",
-  },
-  {
-    name: "Central Bank of Kenya Annual Reports",
-    description:
-      "Source for M-Pesa agent network scale, mobile money regulatory framework, financial inclusion trajectory.",
-    url: "https://www.centralbank.go.ke/reports/cbk-annual-reports/",
-    date: "2007-2024",
-  },
-  {
-    name: "Jack & Suri (2014), American Economic Review",
-    description:
-      "Canonical M-Pesa study. Documented 96% remittance cost reduction. Foundational comparative reference for Kenya.",
-    url: "https://www.aeaweb.org/articles?id=10.1257/aer.104.1.183",
-    date: "Published January 2014",
-  },
-  {
-    name: "BHIM UPI",
-    description:
-      "India's simplified UPI interface. Available in 13 regional languages. Precedent for Urdu-first design standards.",
-    url: "https://www.bhimupi.org.in/",
-    date: "Launched January 2017",
-  },
-];
+import { SOURCES } from "../sources";
 
 function MethodologyNote({ metadata }) {
   return (
     <section className="block">
       <div className="block-header">
         <div className="block-label">Sources and Methodology</div>
-        <h2>Every Number Traces to a Primary Source</h2>
+        <h2>Where Every Number Comes From</h2>
       </div>
 
       <div
@@ -86,168 +14,70 @@ function MethodologyNote({ metadata }) {
         style={{ borderTop: "none", paddingTop: 0, marginTop: 0 }}
       >
         <p style={{ marginBottom: "16px" }}>
-          All data in this tracker is extracted from publicly available primary
-          sources. No secondary reporting (news articles, blog posts) is used as
-          a data source. Every figure in the charts and every statistic in the
-          analysis traces to a specific document. The verification checklist
-          with 36 confirmed data points is available in the project repository.
+          Each figure on this page carries a marker such as [1, p. 31]. The number points to the list below and
+          the page is the printed page of that document. Sources marked SECONDARY are press reports of someone
+          else's data. Figures I worked out myself are labelled "my calculation" next to their inputs.
         </p>
 
-        <h3>Clickable Source Registry</h3>
-        <div className="source-registry">
-          {sources.map((source, i) => (
-            <div
-              key={i}
-              style={{
-                padding: "12px 0",
-                borderBottom: "1px solid #ECF0F1",
-              }}
+        <h3 id="sources">Sources</h3>
+        <ol className="source-registry" style={{ paddingLeft: "20px" }}>
+          {SOURCES.map((s) => (
+            <li
+              key={s.id}
+              id={`source-${s.id}`}
+              style={{ padding: "10px 0", borderBottom: "1px solid #ECF0F1", fontSize: "12px", color: "#2C3E50" }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "baseline",
-                  marginBottom: "4px",
-                }}
-              >
-                <strong style={{ fontSize: "13px", color: "#2C3E50" }}>
-                  {source.name}
-                </strong>
-                <a
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    fontSize: "11px",
-                    color: "#2E86C1",
-                    textDecoration: "none",
-                    flexShrink: 0,
-                    marginLeft: "12px",
-                  }}
-                >
-                  Open source &#x2197;
-                </a>
-              </div>
-              <div
-                style={{
-                  fontSize: "12px",
-                  color: "#7F8C8D",
-                  lineHeight: "1.5",
-                }}
-              >
-                {source.description}
-              </div>
-              <div
-                style={{ fontSize: "10px", color: "#BDC3C7", marginTop: "2px" }}
-              >
-                {source.date}
-              </div>
-            </div>
+              {s.publisher}. <em>{s.title}</em>. {s.date}.{" "}
+              <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E86C1" }}>
+                {s.url}
+              </a>
+              . Accessed {s.accessed}. <strong>{s.label}</strong>.
+              {s.note ? <span style={{ color: "#7F8C8D" }}> {s.note}</span> : null}
+            </li>
           ))}
-        </div>
+        </ol>
 
-        <h3 style={{ marginTop: "24px" }}>Adoption Gap Index Methodology</h3>
+        <h3 style={{ marginTop: "24px" }}>Adoption Gap Index</h3>
         <p>
-          <strong>Formula:</strong> (Total Raast P2P Transactions FY25 / Mobile
-          Banking App Users FY25)
+          <strong>Formula (version 2.0):</strong> Raast P2P payments in FY26 divided by Raast P2P IDs registered at end
+          June 2026. 2,537.2 million / 49.2 million = 51.6 payments per ID per year. Inputs: source 1, p. 31 and p. 11.
         </p>
         <p>
-          <strong>Numerator:</strong> 1,276.0 million Raast P2P transactions.{" "}
-          <strong>Denominator (Option B):</strong> 24.1 million mobile banking
-          app users. <strong>Result:</strong> 52.9 transactions per account per
-          year.
-        </p>
-        <p>
-          Mobile banking app users are considered the primary Raast-enabled
-          account base.Combining all digital user categories making the total
-          around 109.1M contains significant category overlap. As total Raast
-          registered IDs are not separately reported in SBP data. Full
-          justification in{" "}
+          <strong>Old basis, kept for comparison:</strong> Raast P2P payments divided by mobile banking users. FY25: 1,266.0 / 24.1 = 52.5.
+          FY26: 2,537.2 / 30.4 = 83.5. Version 1.0 printed 52.9 because it used total Raast transactions (1,276.0 million)
+          as if they were P2P. Full notes in{" "}
           <a
             href="https://github.com/fawad-liaqat/raast-tracker/blob/main/METHODOLOGY.md"
             target="_blank"
             rel="noreferrer"
-            style={{
-              color: "#2E86C1",
-              textDecoration: "none",
-              borderBottom: "1px dotted #2E86C1",
-            }}
+            style={{ color: "#2E86C1" }}
           >
             METHODOLOGY.md
           </a>
+          .
         </p>
 
         <h3 style={{ marginTop: "24px" }}>Known Limitations</h3>
         <ul>
-          <li>
-            No district-level Raast usage data. Urban vs rural POS density used
-            as proxy.
-          </li>
-          <li>
-            Unique transacting accounts not reported by SBP. Total registered
-            accounts used as denominator.
-          </li>
-          <li>
-            88% digital share is by volume, not value. Value share is ~29% (Q2
-            FY25).
-          </li>
-          <li>
-            User categories (mobile banking, BB app, e-wallet) contain overlap.
-          </li>
-          <li>
-            Kenya early-stage data is narrative, not structured. Direct volume
-            comparison not possible.
-          </li>
-          <li>
-            Adoption Gap Index is a computed metric, not an SBP-reported figure.
-          </li>
+          <li>FY26 figures are provisional and may be revised in the FY27 review.</li>
+          <li>SBP does not publish active Raast users, so the index averages over all registered IDs.</li>
+          <li>No district level Raast data is published.</li>
+          <li>User categories (mobile banking, branchless banking apps, e-wallets) overlap.</li>
+          <li>POS device counts now include Soft POS, which breaks comparison with FY24 and earlier.</li>
+          <li>Years differ across countries: FY26 for Pakistan, April to March for India and Kenya, a 2024 survey for Findex.</li>
+          <li>Karandaaz survey figures come from press reports of the survey, not the survey report itself.</li>
         </ul>
 
-        <h3 style={{ marginTop: "24px" }}>Credibility Standards</h3>
+        <h3 style={{ marginTop: "24px" }}>Theoretical framework (background reading, not used as data)</h3>
         <ul>
-          <li>
-            Volume and value are never conflated. Charts specify which is shown.
-          </li>
-          <li>
-            All cross-country comparisons use contemporaneous data (not
-            mismatched periods).
-          </li>
-          <li>
-            Computed metrics are labeled as such, distinct from reported
-            figures.
-          </li>
-          <li>
-            Primary sources used exclusively. No Wikipedia, no news aggregators
-            for data.
-          </li>
+          <li><strong>Technology Acceptance Model:</strong> Davis (1989). Perceived usefulness and ease of use.</li>
+          <li><strong>Diffusion of Innovations:</strong> Rogers (2003). How adoption spreads from early adopters to the majority.</li>
+          <li><strong>Prospect Theory:</strong> Kahneman and Tversky (1979). Loss aversion and perceived risk.</li>
+          <li><strong>Institutional Trust:</strong> Zucker (1986). Why trust in people can substitute for trust in institutions.</li>
         </ul>
 
-        <h3 style={{ marginTop: "24px" }}>Theoretical Framework</h3>
-        <ul>
-          <li>
-            <strong>Technology Acceptance Model (TAM):</strong> Davis (1989).
-            Trust deficit maps to perceived usefulness and ease of use.
-          </li>
-          <li>
-            <strong>Diffusion of Innovations:</strong> Rogers (2003). Pakistan
-            is at the chasm between early adopters and early majority.
-          </li>
-          <li>
-            <strong>Prospect Theory:</strong> Kahneman & Tversky (1979). Loss
-            aversion explains why perceived risk of digital outweighs perceived
-            benefit.
-          </li>
-          <li>
-            <strong>Institutional Trust:</strong> Zucker (1986). Low
-            institutional trust explains why agent-based models work where bank
-            models fail.
-          </li>
-        </ul>
-
-        <p style={{ marginTop: "16px", fontSize: "11px", color: "#BDC3C7" }}>
-          Data version: {metadata.version} | Extraction:{" "}
-          {metadata.extraction_date} | Author: {metadata.author}
+        <p style={{ marginTop: "16px", fontSize: "11px", color: "#7F8C8D" }}>
+          Data version: {metadata.version} | Extracted: {metadata.extraction_date} | Author: {metadata.author} | Last updated: November 2026
         </p>
       </div>
     </section>

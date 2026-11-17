@@ -3,17 +3,17 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
   Tooltip, Legend, ResponsiveContainer
 } from 'recharts'
+import Src from './Src'
 
 const BLUE = '#2E86C1'
 const BLUE_LIGHT = '#85C1E9'
-const SBP_URL = 'https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY25.pdf'
 
 function DensityComparison({ data }) {
   const chartData = [
-    { name: 'ATMs', FY24: data.atm_count.fy24, FY25: data.atm_count.fy25 },
-    { name: 'CDMs', FY24: data.cdm_count.fy24, FY25: data.cdm_count.fy25 },
-    { name: 'POS Terminals', FY24: data.pos_terminals.fy24 || 125545, FY25: data.pos_terminals.fy25 },
-    { name: 'QR Merchants', FY24: data.qr_merchants.fy24, FY25: data.qr_merchants.fy25 }
+    { name: 'ATMs', FY25: data.atm_count.fy25, FY26: data.atm_count.fy26 },
+    { name: 'CDMs', FY25: data.cdm_count.fy25, FY26: data.cdm_count.fy26 },
+    { name: 'POS Devices', FY25: data.pos_devices.fy25, FY26: data.pos_devices.fy26 },
+    { name: 'QR Merchants', FY25: data.qr_merchants.fy25, FY26: data.qr_merchants.fy26 }
   ]
 
   const formatTick = (value) => {
@@ -40,7 +40,7 @@ function DensityComparison({ data }) {
   return (
     <section className="block">
       <div className="block-header">
-        <div className="block-label">Block B — Acceptance Density</div>
+        <div className="block-label">Block B: Acceptance Density</div>
         <h2>Infrastructure Deployment: The Terminals Exist</h2>
       </div>
 
@@ -52,32 +52,41 @@ function DensityComparison({ data }) {
             <YAxis type="category" dataKey="name" tick={{ fontSize: 12, fill: '#7F8C8D' }} width={90} />
             <Tooltip formatter={(value) => value.toLocaleString()} contentStyle={{ fontSize: 12, borderRadius: 6 }} />
             <Legend wrapperStyle={{ fontSize: 12 }} />
-            <Bar dataKey="FY24" fill={BLUE_LIGHT} barSize={16} label={renderBarLabel} />
-            <Bar dataKey="FY25" fill={BLUE} barSize={16} label={renderBarLabel} />
+            <Bar dataKey="FY25" fill={BLUE_LIGHT} barSize={16} label={renderBarLabel} />
+            <Bar dataKey="FY26" fill={BLUE} barSize={16} label={renderBarLabel} />
           </BarChart>
         </ResponsiveContainer>
+      </div>
+
+      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px' }}>
+        End of June each year. FY25 values are the revised figures printed in the FY26 review; POS devices now
+        include Soft POS, so they are not comparable with earlier years. Source: SBP Table A-1 <Src id="R1" p="24" />
       </div>
 
       <div className="insight-box">
         <span className="insight-label analysis">Analysis</span>
         <p>
-          QR merchant count doubled from 516K to 1.09M. POS terminals grew 56% to 196K at 159K merchants.
-          CDMs nearly doubled from 579 to 1,038. The branchless banking agent network reached 731,814.
-          <a href={SBP_URL} target="_blank" rel="noopener noreferrer" className="source-tag">SBP FY25</a>
+          QR enabled merchants rose from 1.09 million to 3.84 million in a year, which the State Bank links to a
+          subsidy under the Prime Minister's Cashless Pakistan Initiative <Src id="R1" p="7" />. POS devices grew 49%
+          to 337,791, mostly because of Soft POS. CDMs nearly doubled to 1,896. Branchless banking agents
+          reached 837,244 <Src id="R1" p="15" />. Raast had 3.6 million merchants registered on its merchant alias by June 2026 <Src id="R1" p="11" />.
         </p>
       </div>
 
       <div className="insight-box amber">
-        <span className="insight-label comparison">Why deployment alone fails</span>
+        <span className="insight-label comparison">Why deployment alone is not enough</span>
         <p>
-          Terminal deployment measures <strong>supply</strong>. It does not measure whether merchants
-          prefer digital acceptance over cash. With MDR fees of 1.5-2.5% per transaction and tax
-          documentation requirements, many merchants with QR codes still prefer cash. A QR sticker
-          on the wall does not mean a QR payment at the counter.
+          Terminal counts measure <strong>supply</strong>. The State Bank reports 297 million QR and till payments
+          in FY26 against 3.8 million QR merchants <Src id="R1" p="10" />. That is about 77 payments per merchant
+          per year, or one and a half a week (my calculation). Many merchants joined partway through the year,
+          so active merchants will have a higher rate. Still, a QR sticker on the wall does not mean a QR
+          payment at the counter.
         </p>
         <p>
-          Pakistan's 731,814 branchless banking agents primarily facilitate cash-in/cash-out, not digital
-          payments. They serve the cash economy, not the digital one.
+          Agents still do a lot of cash work. Of the PKR 3.7 trillion that passed through branchless banking
+          agents in FY26 <Src id="R1" p="26" />, about PKR 1.0 trillion was cash deposits and withdrawals
+          (PKR 584 billion and PKR 413 billion) <Src id="R1" p="11" />. That is roughly a quarter (my calculation).
+          The rest was bill payments, transfers and cash collection. Agents are a bridge between cash and accounts.
         </p>
       </div>
     </section>

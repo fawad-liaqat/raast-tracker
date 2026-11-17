@@ -1,0 +1,82 @@
+{
+  "metadata": {
+    "source": "State Bank of Pakistan, Annual Payment Systems Review FY 2025-26 (provisional figures)",
+    "source_id": "R1",
+    "publication_date": "2026-10-06",
+    "extraction_date": "2026-11-17",
+    "version": "2.0",
+    "author": "Fawad Liaqat",
+    "extraction_method": "Text extracted with pdftotext (layout mode); every value checked by hand against the printed page given in source_ref.",
+    "fiscal_year_definition": "FY26 = July 2025 to June 2026. FY25 = July 2024 to June 2025.",
+    "notes": "FY26 figures are provisional (P) and some FY25 figures are revised (R) in the FY26 review. Prior year values are taken from the FY26 review, not the FY25 review, so both years use the same revised series. The earlier FY25 dataset is kept unchanged in data/sbp-fy25.json."
+  },
+  "raast_timeseries": [
+    { "period": "FY22", "total_volume_millions": 7.9, "p2p_volume_millions": 7.9, "p2m_volume_millions": null, "total_value_pkr_billions": 117.3, "source_ref": { "source_id": "R1", "page": 31, "table": "Table A-15: Raast Transactions" } },
+    { "period": "FY23", "total_volume_millions": 147.2, "p2p_volume_millions": 146.9, "p2m_volume_millions": null, "total_value_pkr_billions": 3074.4, "source_ref": { "source_id": "R1", "page": 31, "table": "Table A-15: Raast Transactions" } },
+    { "period": "FY24", "total_volume_millions": 496.1, "p2p_volume_millions": 494.4, "p2m_volume_millions": 0.1, "total_value_pkr_billions": 11558.6, "source_ref": { "source_id": "R1", "page": 31, "table": "Table A-15: Raast Transactions" } },
+    { "period": "FY25", "total_volume_millions": 1276.0, "p2p_volume_millions": 1266.0, "p2m_volume_millions": 4.9, "total_value_pkr_billions": 29564.1, "source_ref": { "source_id": "R1", "page": 31, "table": "Table A-15: Raast Transactions" } },
+    { "period": "FY26", "total_volume_millions": 2755.2, "p2p_volume_millions": 2537.2, "p2m_volume_millions": 182.5, "total_value_pkr_billions": 80050.8, "source_ref": { "source_id": "R1", "page": 31, "table": "Table A-15: Raast Transactions (provisional)" } }
+  ],
+  "raast_ids": {
+    "p2p_ids_millions_jun26": 49.2,
+    "p2m_merchants_millions_jun26": 3.6,
+    "source_ref": { "source_id": "R1", "page": 11, "table": "Payment Systems at a Glance, Raast panel" }
+  },
+  "retail_payments": {
+    "fy25": { "total_volume_millions": 9072.6, "total_value_pkr_trillions": 611.6, "digital_volume_millions": 7971.5, "digital_value_pkr_trillions": 178.6, "otc_volume_millions": 1101.1, "otc_value_pkr_trillions": 432.9 },
+    "fy26": { "total_volume_millions": 14297.5, "total_value_pkr_trillions": 672.7, "digital_volume_millions": 13192.4, "digital_value_pkr_trillions": 257.1, "otc_volume_millions": 1105.1, "otc_value_pkr_trillions": 415.7 },
+    "fy26_growth": { "volume_yoy_pct": 58, "value_yoy_pct": 10 },
+    "mobile_phone_channels_fy26": { "volume_millions": 11129, "value_pkr_trillions": 155, "volume_yoy_pct": 79, "prior_year_yoy_pct": 52 },
+    "digital_share_by_volume_pct": { "fy24": 85, "fy25": 88, "fy26": 92 },
+    "digital_share_by_value_pct": { "fy25": 29, "fy26": 38 },
+    "merchant_payments_via_accounts_share_pct_fy26": 13.0,
+    "qr_and_till_payments_fy26": { "volume_millions": 297, "value_pkr_trillions": 1.6 },
+    "source_ref": { "source_id": "R1", "pages": "7 (shares and growth), 9 (snapshot table), 10 (QR and till payments), 19 (merchant payments)" }
+  },
+  "infrastructure": {
+    "atm_count": { "fy24": 18957, "fy25": 20250, "fy26": 21678 },
+    "cdm_count": { "fy24": 579, "fy25": 1038, "fy26": 1896 },
+    "pos_devices": { "fy24": 125593, "fy25": 227388, "fy26": 337791, "note": "Soft POS devices are now part of the series (Table A-1 note ***), so FY25 and FY26 are not comparable with the FY24 value or with the 195,849 printed in the FY25 review." },
+    "pos_merchants": { "fy25": 190823, "fy26": 295367 },
+    "qr_merchants": { "fy24": 516317, "fy25": 1092044, "fy26": 3836522 },
+    "ecommerce_merchants": { "fy24": 7816, "fy25": 9584, "fy26": 23356 },
+    "bb_agents": { "fy24": 666682, "fy25": 731814, "fy26": 837244 },
+    "source_ref": { "source_id": "R1", "page": 24, "table": "Table A-1: Payment Systems Infrastructure and Users" }
+  },
+  "user_adoption": {
+    "mobile_banking_users_m": { "fy25": 24.1, "fy26": 30.4 },
+    "bb_mobile_app_users_m": { "fy25": 79.2, "fy26": 99.1 },
+    "ewallet_users_m": { "fy25": 5.8, "fy26": 7.9 },
+    "internet_banking_users_m": { "fy25": 14.9, "fy26": 17.5 },
+    "ivr_banking_users_m": { "fy25": 43.6, "fy26": 46.1 },
+    "source_ref": { "source_id": "R1", "page": 9, "table": "Payment Systems Snapshot; full counts in Table A-1, p. 24" }
+  },
+  "atm_usage": {
+    "daily_avg_per_atm_fy26": 140,
+    "total_atms_fy26": 21678,
+    "cash_withdrawals_millions": { "fy22": 670.6, "fy23": 786.7, "fy24": 907.6, "fy25": 1014.7, "fy26": 1064.1 },
+    "total_atm_transactions_millions": { "fy22": 692.3, "fy23": 809.7, "fy24": 930.7, "fy25": 1039.6, "fy26": 1090.7 },
+    "cash_withdrawal_share_pct": { "fy22": 96.9, "fy23": 97.2, "fy24": 97.5, "fy25": 97.6, "fy26": 97.6 },
+    "share_is_author_calculation": true,
+    "source_ref": { "source_id": "R1", "pages": "8 (ATMs, 140 per day), 26 (Table A-5: ATM Transactions)" }
+  },
+  "adoption_gap_index": {
+    "label": "Author's calculation, not an SBP figure",
+    "primary": {
+      "formula": "Raast P2P payments in FY26 / Raast P2P IDs registered at end June 2026",
+      "numerator_millions": 2537.2,
+      "numerator_source": "R1, p. 31, Table A-15",
+      "denominator_millions": 49.2,
+      "denominator_source": "R1, p. 11",
+      "computed_value": 51.6,
+      "unit": "P2P payments per registered Raast ID per year"
+    },
+    "comparison_mobile_banking_users": {
+      "formula": "Raast P2P payments / mobile banking users (the denominator used in version 1.0)",
+      "fy25": { "numerator_millions": 1266.0, "denominator_millions": 24.1, "computed_value": 52.5 },
+      "fy26": { "numerator_millions": 2537.2, "denominator_millions": 30.4, "computed_value": 83.5 },
+      "sources": "R1, p. 31 (Table A-15) and p. 9"
+    },
+    "correction_note": "Version 1.0 used 1,276.0 million as 'Raast P2P transactions'. That figure is total Raast transactions (bulk, P2P and P2M). P2P alone was 1,266.0 million in FY25. The 52.9 printed in version 1.0 becomes 52.5 on the correct numerator. Version 1.0 also described the formula with 'x 100', which was never applied."
+  }
+}

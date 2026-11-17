@@ -1,69 +1,99 @@
 # Methodology: Raast Adoption Gap Tracker
 
-## Data Sources
+Last updated: November 2026 (data version 2.0).
 
-### Primary Source
-**SBP Annual Payment Systems Review FY25**
-- Published: 3 November 2025
-- URL: https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY25.pdf
-- Coverage: July 2024 to June 2025 (FY25)
+## Data sources
 
-### Supplementary Sources
-- SBP Quarterly Payment Systems Reviews Q2 and Q3 FY25
-- SBP Governor's Annual Report FY25
-- SBP Press Release PR-03-Nov-2025 (cross-verification)
+### Primary source
+**State Bank of Pakistan, Annual Payment Systems Review FY 2025-26 (provisional figures)** [1]
+- Listed on the SBP website as "Annual Payment Systems Review of FY26", 6 October 2026
+- URL: https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY26.pdf
+- Coverage: July 2025 to June 2026 (FY26), with revised FY25 columns and earlier years in Annexure A
+- Pages used: 7, 8, 9, 10, 11, 15, 21, 24, 26, 31 (printed page numbers)
 
-## Extraction Process
+FY25 comparisons are taken from the revised FY25 columns of the FY26 review, so both years
+use the same series. Some FY25 values changed on revision: ATMs 20,341 became 20,250; POS
+devices 195,849 became 227,388 (Soft POS now included); QR merchants are 1,092,044 (version 1.0
+had a typo, 1,092,004).
 
-- Tables extracted using Camelot 0.11.0 (lattice mode for bordered tables, stream mode for borderless)
-- Chart-embedded data read manually from chart axes
-- Every value cross-verified against at least two SBP documents
-- Full verification log: `extraction/verification/verification-checklist.csv`
-- Extraction date: March 2026
+### Other sources
+The dashboard's Sources section lists all sources with dates, links and access dates:
+World Bank Global Findex 2025 [2]; press reports of the Karandaaz Financial Inclusion Survey
+2024 [3, 4]; Government of India releases on UPI [5, 6]; a press report on India's zero MDR
+decision [7]; the Reserve Bank of India release on UPI123Pay [8]; a press report on Safaricom's
+FY26 M-Pesa results [9]; the SBP release on Raast's launch [10]; Central Bank of Kenya reports
+index [11].
 
-## Adoption Gap Index
+## Extraction process
 
-### Formula
-(Total Raast P2P Transactions FY25 / Total Registered Digital Accounts) x 100
+- Text extracted with `pdftotext -layout` from the SBP PDF.
+- Every value checked by hand against the printed page recorded in `data/sbp-fy26.json`.
+- Extraction date: 17 November 2026.
 
-### Numerator
-1,276.0 million Raast P2P transactions (FY25)
+## Adoption Gap Index (author's calculation)
 
-### Denominator
-Mobile banking app users: 24.1 million (Option B)
+### Formula, version 2.0
+Raast P2P payments in FY26 / Raast P2P IDs registered at end June 2026
 
-**Why Option B**: Mobile banking app users are the primary Raast-enabled account base. This is the most defensible denominator because:
-1. These accounts are directly connected to Raast infrastructure
-2. Option A (109.1M combining mobile banking + BB + e-wallet users) has significant overlap between categories
-3. Option C (total Raast registered IDs) is ideal but not separately reported in the SBP FY25 Review
+- Numerator: 2,537.2 million P2P payments (Table A-15, p. 31)
+- Denominator: 49.2 million Raast P2P IDs (p. 11)
+- Result: 51.6 payments per ID per year, about 4.3 a month
 
-### Result
-52.9 transactions per account per year (approximately 4.4 per month)
+### Why this denominator
+The FY26 review prints the number of registered Raast P2P IDs. Version 1.0 named this
+"Option C" and could not use it because the figure was not available. It is a closer match
+to the people who can use Raast than mobile banking users (Option B, used in version 1.0).
 
-### Interpretation
-This means the average mobile banking user executes roughly one Raast P2P transaction per week. However, this is an average across all registered users, including dormant accounts. Active user transaction frequency is likely much higher, while a large proportion of registered users may never transact via Raast.
+### Old basis, for comparison
+Raast P2P payments / mobile banking users:
+- FY25: 1,266.0 / 24.1 = 52.5
+- FY26: 2,537.2 / 30.4 = 83.5
 
-## Known Limitations
+### Corrections to version 1.0
+1. Version 1.0 used 1,276.0 million as "Raast P2P transactions". That is total Raast
+   transactions (bulk, P2P and P2M). P2P alone was 1,266.0 million. The FY25 index on the
+   old basis is therefore 52.5, not 52.9.
+2. The formula was written with "x 100", which was never applied. It is removed.
+3. The ATM cash withdrawal share was shown as a flat 98% for FY22 to FY25. Calculated from
+   Table A-5 (p. 26) it is 96.9%, 97.2%, 97.5%, 97.6% and 97.6% for FY22 to FY26.
+4. The "54 million deposit accounts below PKR 5,000" statement and the "40% of GDP informal"
+   statement had no source and were removed.
+5. India's zero MDR was described as "below Rs 2,000 in 2019". The announcement made UPI and
+   RuPay payments free of MDR from 1 January 2020, with no size threshold mentioned [7].
 
-1. **No geographic granularity**: SBP does not publish district-level Raast usage data. Urban vs rural POS terminal distribution is used as a proxy for acceptance density.
+## Known limitations
 
-2. **No unique transacting account data**: The SBP does not report how many unique accounts initiated Raast transactions. The Adoption Gap Index uses total registered accounts, which overstates the active user base.
-
-3. **Volume vs value distinction**: Digital channels carry 88% of retail transactions by volume but only 29% by value (Q2 FY25). The dashboard primarily presents volume metrics. This distinction is noted in chart annotations.
-
-4. **Category overlap in user counts**: Mobile banking users, BB mobile app users, and e-wallet users are not mutually exclusive categories. A single person may hold accounts across multiple categories.
-
-5. **ATM cash withdrawal percentage**: The 98% figure represents the proportion of ATM transactions that are cash withdrawals. It does not mean 98% of all transactions are cash-based.
+1. FY26 figures are provisional.
+2. SBP does not publish active Raast users. The index averages across all registered IDs.
+3. No district level Raast data.
+4. User categories overlap.
+5. POS devices now include Soft POS, so FY25 and FY26 are not comparable with FY24.
+6. Years differ across countries.
+7. Karandaaz survey figures come from press reports, not the survey report.
 
 ## Assumptions
 
-- FY25 figures are full-year annual totals (July 2024 to June 2025)
-- All monetary values are in Pakistani Rupees (PKR)
-- User counts represent registered accounts, not unique individuals
-- Growth rates are year-over-year unless otherwise stated
+- All monetary values in Pakistani rupees.
+- User counts are registered accounts or IDs, not unique people.
+- Growth rates are year on year unless stated.
 
-## Version Log
+## Version log
 
 | Version | Date | Change |
 |---------|------|--------|
-| 1.0 | 2026-03-21 | Initial data extraction from SBP FY25 Annual Review |
+| 1.0 | 2026-03-21 | Initial extraction from SBP FY25 Annual Review |
+| 2.0 | 2026-11-17 | Moved to SBP FY26 review; Findex 2025; new index denominator (Raast IDs); corrections listed above; numbered sources on every figure |
+
+## Sources
+
+1. State Bank of Pakistan. *Annual Payment Systems Review FY 2025-26* (provisional). October 2026. https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY26.pdf. Accessed 17 November 2026.
+2. World Bank. *The Global Findex Database 2025*. 2025. https://www.worldbank.org/en/publication/globalfindex. Accessed 17 November 2026.
+3. Mettis Global. *Karandaaz releases K-FIS 2024 on financial inclusion trends*. 18 June 2025. https://mettisglobal.news/Karandaaz-releases-KFIS-2024-on-financial-inclusion-trends-53170. Accessed 17 November 2026. Secondary.
+4. Business Recorder. *Bridging the financial gap: insights from Karandaaz Financial Inclusion Survey (K-FIS), part I*. 5 July 2025. https://www.brecorder.com/news/40371177/bridging-the-financial-gap-insights-from-karandaaz-financial-inclusion-survey-k-fisi. Accessed 17 November 2026. Secondary.
+5. Government of India, Ministry of Finance, via PIB. *Nearly 55.49 crore users onboarded on UPI as in June 2026*. 20 July 2026. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286608&reg=48&lang=2. Accessed 17 November 2026.
+6. Government of India, Ministry of Finance, via PIB. *UPI completes 10 years of digital payments revolution*. 24 August 2026. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2302657&reg=48&lang=2. Accessed 17 November 2026.
+7. Outlook Business. *No MDR charges from Jan 1 on UPI, RuPay transactions*. 28 December 2019. https://www.outlookbusiness.com/talking-money/no-mdr-charges-from-jan-1-on-upi-rupay-transactions-4103. Accessed 17 November 2026. Secondary.
+8. Reserve Bank of India. *UPI for feature phones (UPI123Pay) and DigiSaathi helpline*. 8 March 2022. https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=53385. Accessed 16 November 2026.
+9. Tech-ish. *Safaricom FY26 M-PESA results explained*. 7 May 2026. https://tech-ish.com/2026/05/07/safaricom-fy26-mpesa-results-explained/. Accessed 17 November 2026. Secondary.
+10. State Bank of Pakistan. *Press release on the launch of Raast's first phase*. 11 January 2021. https://www.sbp.org.pk/press/2021/Pr-11-Jan-21.pdf. Accessed 17 November 2026.
+11. Central Bank of Kenya. *Annual reports index*. https://www.centralbank.go.ke/reports/cbk-annual-reports/. Not re-read in November 2026.

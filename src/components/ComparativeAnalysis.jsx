@@ -1,114 +1,98 @@
 import React from 'react'
-
-const NPCI_URL = 'https://www.npci.org.in/what-we-do/upi/upi-ecosystem-statistics'
-const FINDEX_URL = 'https://www.worldbank.org/en/publication/globalfindex'
+import Src from './Src'
 
 function ComparativeAnalysis() {
   return (
     <section className="block">
       <div className="block-header">
         <div className="block-label">Comparative Evidence</div>
-        <h2>Pakistan vs India vs Kenya: What the Data Shows</h2>
+        <h2>Pakistan, India and Kenya: What the Data Shows</h2>
       </div>
 
       <p style={{ fontSize: '13px', color: '#566573', marginBottom: '20px', lineHeight: '1.6' }}>
-        Comparing Pakistan at year 5 of Raast with India at year 5 of UPI (2021) and Kenya at year 5
-        of M-Pesa (2012) isolates the behavioral variables that explain divergent outcomes at equivalent
-        infrastructure maturity.
+        The three systems are at different ages and the years do not match exactly, so this is a rough
+        comparison of scale and reach, not a controlled one.
       </p>
 
-      {/* Infrastructure comparison */}
       <table className="data-table">
         <thead>
           <tr>
             <th>Indicator</th>
-            <th>Pakistan (FY25)</th>
-            <th>India (2025)</th>
-            <th>Kenya (2024 est.)</th>
+            <th>Pakistan</th>
+            <th>India</th>
+            <th>Kenya</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Primary system</td>
-            <td>Raast (Jan 2021)</td>
-            <td>UPI (Apr 2016)</td>
-            <td>M-Pesa (Mar 2007)</td>
+            <td>Raast (first phase January 2021) <Src id="R10" /></td>
+            <td>UPI</td>
+            <td>M-Pesa</td>
           </tr>
           <tr>
-            <td>Annual transaction volume</td>
-            <td><strong>1.28B</strong></td>
-            <td><strong>228.3B</strong></td>
-            <td><strong>~18B</strong></td>
+            <td>Annual transactions</td>
+            <td><strong>2.76B</strong> (FY26, July to June) <Src id="R1" p="31" /></td>
+            <td><strong>241.6B</strong> (FY 2025-26, April to March) <Src id="R5" /></td>
+            <td><strong>46.4B</strong> (year to March 2026, press report) <Src id="R9" /></td>
           </tr>
           <tr>
-            <td>Financial inclusion</td>
-            <td>35%</td>
-            <td>77.5%</td>
-            <td>82%</td>
+            <td>Adults with an account (Findex 2025, survey year 2024)</td>
+            <td>27%</td>
+            <td>89%</td>
+            <td>90%</td>
           </tr>
           <tr>
-            <td>Population</td>
-            <td>~240M</td>
-            <td>~1.44B</td>
-            <td>~56M</td>
-          </tr>
-          <tr>
-            <td>Years since launch</td>
-            <td>5</td>
-            <td>10</td>
-            <td>19</td>
+            <td>Adults who made or received a digital payment (same survey)</td>
+            <td>25%</td>
+            <td>48%</td>
+            <td>89%</td>
           </tr>
         </tbody>
       </table>
 
       <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px', textAlign: 'right' }}>
-        Sources:{' '}
-        <a href="https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY25.pdf" target="_blank" rel="noopener noreferrer" className="source-link">SBP FY25</a>,{' '}
-        <a href={NPCI_URL} target="_blank" rel="noopener noreferrer" className="source-link">NPCI</a>,{' '}
-        <a href={FINDEX_URL} target="_blank" rel="noopener noreferrer" className="source-link">World Bank Findex</a>
+        Account and payment rows: World Bank Findex 2025, Table B.1 <Src id="R2" p="297" /> <Src id="R2" p="298" />.
+        Population rows from version 1.0 were removed because they had no source.
       </div>
 
-      {/* Country insight cards */}
       <div className="comparison-grid" style={{ marginTop: '24px' }}>
         <div className="comparison-card" style={{ borderTop: '3px solid #2E86C1' }}>
-          <div className="country">India — UPI</div>
-          <div className="value" style={{ color: '#2E86C1' }}>228.3B</div>
-          <div className="label">transactions (2025)</div>
+          <div className="country">India: UPI</div>
+          <div className="value" style={{ color: '#2E86C1' }}>241.6B</div>
+          <div className="label">transactions, FY 2025-26 <Src id="R5" /></div>
           <div style={{ fontSize: '11px', color: '#566573', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
-            <strong>What they did differently:</strong> Zero MDR on transactions below Rs 2,000 (2019).
-            Jan Dhan created 500M+ bank accounts. BHIM in 13 languages. UPI 123PAY for feature phones.
-            Demonetization (2016) as a one-time behavioral shock.
+            <strong>Policy moves:</strong> no merchant discount rate on UPI and RuPay from January 2020 <Src id="R7" />.
+            UPI123Pay for feature phones from 2022 <Src id="R8" />. Merchant payments now 63% of UPI volume <Src id="R6" />.
+            Note the access gap: 89% have an account but only 48% pay digitally <Src id="R2" p="297" />.
           </div>
-          <a href={NPCI_URL} target="_blank" rel="noopener noreferrer" className="source-tag" style={{ marginTop: '8px' }}>NPCI Data</a>
         </div>
 
         <div className="comparison-card" style={{ borderTop: '3px solid #27AE60' }}>
-          <div className="country">Kenya — M-Pesa</div>
-          <div className="value" style={{ color: '#27AE60' }}>82%</div>
-          <div className="label">financial inclusion (2021)</div>
+          <div className="country">Kenya: M-Pesa</div>
+          <div className="value" style={{ color: '#27AE60' }}>90%</div>
+          <div className="label">adults with an account, 2024 <Src id="R2" p="297" /></div>
           <div style={{ fontSize: '11px', color: '#566573', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
-            <strong>What they did differently:</strong> Solved a specific pain point (domestic remittances).
-            Agent network as trust intermediary (40K+ agents by 2012). USSD-based, no smartphone needed.
-            Permissive regulation allowed telco-led model.
+            <strong>Model:</strong> mobile money run by a telecom company and reached through agents and basic
+            phones. 89% of adults made or received a digital payment <Src id="R2" p="297" />. The agent story is
+            context from the wider literature, not re-checked against a primary source this round <Src id="R11" />.
           </div>
-          <a href={FINDEX_URL} target="_blank" rel="noopener noreferrer" className="source-tag" style={{ marginTop: '8px' }}>Findex Data</a>
         </div>
 
         <div className="comparison-card" style={{ borderTop: '3px solid #D4A017' }}>
-          <div className="country">Pakistan — Raast</div>
-          <div className="value" style={{ color: '#D4A017' }}>35%</div>
-          <div className="label">financial inclusion (K-FIS 2024)</div>
+          <div className="country">Pakistan: Raast</div>
+          <div className="value" style={{ color: '#D4A017' }}>27%</div>
+          <div className="label">adults with an account, 2024 <Src id="R2" p="298" /></div>
           <div style={{ fontSize: '11px', color: '#566573', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
-            <strong>What's missing:</strong> No zero MDR policy. No mass account creation campaign at Jan Dhan scale.
-            No catalytic use case identified. App-based, smartphone-dependent. Agent network serves cash, not digital.
+            <strong>Where it stands:</strong> a fast growing rail (2.76 billion transactions in FY26) <Src id="R1" p="31" />,
+            a merchant subsidy that tripled QR merchants <Src id="R1" p="7" />, and a small account base.
+            Pakistan's own survey puts inclusion at 35% <Src id="R3" />.
           </div>
-          <a href="https://portal.karandaaz.com.pk" target="_blank" rel="noopener noreferrer" className="source-tag" style={{ marginTop: '8px' }}>K-FIS 2024</a>
         </div>
       </div>
 
-      {/* Behavioral barrier comparison */}
       <h3 style={{ fontSize: '16px', fontWeight: '600', marginTop: '28px', marginBottom: '12px' }}>
-        Behavioral Barrier Comparison
+        Barrier comparison (my reading of the sources above)
       </h3>
       <table className="data-table">
         <thead>
@@ -121,34 +105,28 @@ function ComparativeAnalysis() {
         </thead>
         <tbody>
           <tr>
-            <td>Trust in digital</td>
-            <td style={{ color: '#C0392B' }}>9% banks, 8% mobile money</td>
-            <td>Higher (bank interop trust)</td>
-            <td>Agent = human intermediary</td>
+            <td>Access</td>
+            <td style={{ color: '#C0392B' }}>27% have an account</td>
+            <td style={{ color: '#27AE60' }}>89% have an account</td>
+            <td style={{ color: '#27AE60' }}>90% have an account</td>
+          </tr>
+          <tr>
+            <td>Use among the banked</td>
+            <td style={{ color: '#27AE60' }}>About 90% of account owners pay digitally <Src id="R2" p="167" /></td>
+            <td style={{ color: '#C0392B' }}>Many accounts unused (48% pay digitally)</td>
+            <td style={{ color: '#27AE60' }}>89% pay digitally</td>
           </tr>
           <tr>
             <td>Merchant incentive</td>
-            <td style={{ color: '#C0392B' }}>MDR creates cash preference</td>
-            <td style={{ color: '#27AE60' }}>Zero MDR removed barrier</td>
-            <td style={{ color: '#27AE60' }}>Agent commission = positive incentive</td>
+            <td>QR subsidy under Cashless Pakistan</td>
+            <td style={{ color: '#27AE60' }}>Zero MDR since 2020</td>
+            <td>Not assessed</td>
           </tr>
           <tr>
-            <td>Digital literacy</td>
-            <td style={{ color: '#C0392B' }}>Urban/rural gap; poor Urdu UI</td>
-            <td style={{ color: '#27AE60' }}>BHIM 13 languages; 123PAY</td>
-            <td style={{ color: '#27AE60' }}>USSD; no smartphone needed</td>
-          </tr>
-          <tr>
-            <td>Catalytic use case</td>
-            <td style={{ color: '#C0392B' }}>Not yet identified</td>
-            <td>Merchant QR payments</td>
-            <td>Domestic remittances</td>
-          </tr>
-          <tr>
-            <td>Government lever</td>
-            <td>BISP/Ehsaas (forced adoption)</td>
-            <td>Demonetization + zero MDR + Jan Dhan</td>
-            <td>Permissive regulation + agent licensing</td>
+            <td>Basic phone channel</td>
+            <td>IVR banking exists (46.1M users) <Src id="R1" p="9" />; no Raast basic phone channel found</td>
+            <td style={{ color: '#27AE60' }}>UPI123Pay</td>
+            <td style={{ color: '#27AE60' }}>Basic phone mobile money</td>
           </tr>
         </tbody>
       </table>
@@ -156,12 +134,10 @@ function ComparativeAnalysis() {
       <div className="insight-box success" style={{ marginTop: '16px' }}>
         <span className="insight-label action">Key takeaway</span>
         <p>
-          Neither India nor Kenya achieved mass adoption through infrastructure alone. India's UPI succeeded because
-          <strong> policy design deliberately addressed each barrier</strong>: zero MDR (incentive), Jan Dhan (access),
-          BHIM (literacy), demonetization (behavioral shock). Kenya's M-Pesa succeeded because it
-          <strong> solved a specific acute pain point</strong> (remittances) through a
-          <strong> trust mechanism</strong> (agents) that did not require institutional credibility.
-          Pakistan has not yet found its equivalent.
+          India shows that accounts alone do not create use. Pakistan shows the opposite problem: those who are
+          in already use digital payments, but most adults are not in. The lessons that travel to Pakistan are the
+          ones about reaching people without an account or a smartphone. I would welcome other readings of this
+          data.
         </p>
       </div>
     </section>
