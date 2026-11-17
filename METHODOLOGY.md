@@ -69,7 +69,7 @@ Raast P2P payments / mobile banking users:
 4. User categories overlap.
 5. POS devices now include Soft POS, so FY25 and FY26 are not comparable with FY24.
 6. Years differ across countries.
-7. Karandaaz survey figures come from the K-FIS 2024 narrative report. The first November update used press reports; their trust figures (9%, 8%, 36%) are not in the report and were withdrawn, and the 46% and 82% figures are smartphone, not phone, ownership.
+7. Karandaaz survey figures come from the K-FIS 2024 narrative report. The first November update used press reports; their trust figures (9%, 8%, 36%) are not in the report and were withdrawn, and the 46% (women) and 82% (men) figures are cited as mobile phone ownership (p. 28); the report prints identical figures for smartphone ownership (p. 29), so the smartphone version is probably a repeat.
 
 ## Assumptions
 
