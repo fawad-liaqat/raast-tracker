@@ -76,7 +76,7 @@ function MethodologyNote({ metadata }) {
         </ul>
 
         <p style={{ marginTop: "16px", fontSize: "11px", color: "var(--gray-annotation)" }}>
-          Data version: {metadata.version} | Extracted: {metadata.extraction_date} | Author: {metadata.author} | Last updated: November 2026
+          Data version: {metadata.version} | Last updated: November 2026
         </p>
       </div>
     </section>

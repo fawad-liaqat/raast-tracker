@@ -54,7 +54,7 @@ function CashCounter({ data }) {
         <span className="insight-label analysis">Possible reasons (to be tested)</span>
         <p>
           <strong>For merchants:</strong> card acceptance carries a merchant discount rate, and digital receipts leave a
-          record. Cash has neither. I found no published range for these fees in Pakistan.
+          record. Cash has neither. For Raast QR, SBP lets institutions charge merchants up to 0.25% <Src id="R4" />.
         </p>
         <p>
           <strong>For consumers:</strong> if a shop does not take a QR or card payment, the customer needs cash.
