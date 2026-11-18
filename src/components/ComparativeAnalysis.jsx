@@ -9,7 +9,7 @@ function ComparativeAnalysis() {
         <h2>Pakistan, India and Kenya: What the Data Shows</h2>
       </div>
 
-      <p style={{ fontSize: '13px', color: '#566573', marginBottom: '20px', lineHeight: '1.6' }}>
+      <p style={{ fontSize: '13px', color: 'var(--gray-dark)', marginBottom: '20px', lineHeight: '1.6' }}>
         The three systems are at different ages and the years do not match exactly, so this is a rough
         comparison of scale and reach, not a controlled one.
       </p>
@@ -51,38 +51,38 @@ function ComparativeAnalysis() {
         </tbody>
       </table>
 
-      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px', textAlign: 'right' }}>
+      <div style={{ fontSize: '11px', color: 'var(--gray-annotation)', marginTop: '6px', textAlign: 'right' }}>
         Account and payment rows: World Bank Findex 2025, Table B.1 <Src id="R2" p="297" /> <Src id="R2" p="298" />.
       </div>
 
       <div className="comparison-grid" style={{ marginTop: '24px' }}>
-        <div className="comparison-card" style={{ borderTop: '3px solid #2E86C1' }}>
+        <div className="comparison-card" style={{ borderTop: '3px solid var(--blue-primary)' }}>
           <div className="country">India: UPI</div>
-          <div className="value" style={{ color: '#2E86C1' }}>241.6B</div>
+          <div className="value" style={{ color: 'var(--blue-primary)' }}>241.6B</div>
           <div className="label">transactions, FY 2025-26 <Src id="R5" /></div>
-          <div style={{ fontSize: '11px', color: '#566573', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
+          <div style={{ fontSize: '11px', color: 'var(--gray-dark)', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
             <strong>Policy moves:</strong> no merchant discount rate on UPI and RuPay from January 2020 <Src id="R7" />.
             UPI123Pay for feature phones from 2022 <Src id="R8" />. Merchant payments now 63% of UPI volume <Src id="R6" />.
             Note the access gap: 89% have an account but only 48% pay digitally <Src id="R2" p="297" />.
           </div>
         </div>
 
-        <div className="comparison-card" style={{ borderTop: '3px solid #27AE60' }}>
+        <div className="comparison-card" style={{ borderTop: '3px solid var(--green)' }}>
           <div className="country">Kenya: M-Pesa</div>
-          <div className="value" style={{ color: '#27AE60' }}>90%</div>
+          <div className="value" style={{ color: 'var(--green)' }}>90%</div>
           <div className="label">adults with an account, 2024 <Src id="R2" p="297" /></div>
-          <div style={{ fontSize: '11px', color: '#566573', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
+          <div style={{ fontSize: '11px', color: 'var(--gray-dark)', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
             <strong>Model:</strong> mobile money run by a telecom company and reached through agents and basic
             phones. 89% of adults made or received a digital payment <Src id="R2" p="297" />. Its agent network
             expanded fourfold as M-Pesa spread <Src id="R11" />.
           </div>
         </div>
 
-        <div className="comparison-card" style={{ borderTop: '3px solid #D4A017' }}>
+        <div className="comparison-card" style={{ borderTop: '3px solid var(--amber)' }}>
           <div className="country">Pakistan: Raast</div>
-          <div className="value" style={{ color: '#D4A017' }}>27%</div>
+          <div className="value" style={{ color: 'var(--amber)' }}>27%</div>
           <div className="label">adults with an account, 2024 <Src id="R2" p="298" /></div>
-          <div style={{ fontSize: '11px', color: '#566573', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
+          <div style={{ fontSize: '11px', color: 'var(--gray-dark)', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
             <strong>Where it stands:</strong> a fast growing rail (2.76 billion transactions in FY26) <Src id="R1" p="31" />,
             a merchant subsidy that ran from 1 September 2025 to 30 June 2026 <Src id="R4" /> and coincided with QR merchants tripling <Src id="R1" p="7" />, and a small account base.
             Pakistan's own survey puts inclusion at 35% <Src id="R3" p="7" />.
@@ -105,27 +105,27 @@ function ComparativeAnalysis() {
         <tbody>
           <tr>
             <td>Access</td>
-            <td style={{ color: '#C0392B' }}>27% have an account</td>
-            <td style={{ color: '#27AE60' }}>89% have an account</td>
-            <td style={{ color: '#27AE60' }}>90% have an account</td>
+            <td style={{ color: 'var(--red-muted)' }}>27% have an account</td>
+            <td style={{ color: 'var(--green)' }}>89% have an account</td>
+            <td style={{ color: 'var(--green)' }}>90% have an account</td>
           </tr>
           <tr>
             <td>Use among the banked</td>
-            <td style={{ color: '#27AE60' }}>About 90% of account owners pay digitally <Src id="R2" p="167" /></td>
-            <td style={{ color: '#C0392B' }}>Many accounts unused (48% pay digitally)</td>
-            <td style={{ color: '#27AE60' }}>89% pay digitally</td>
+            <td style={{ color: 'var(--green)' }}>About 90% of account owners pay digitally <Src id="R2" p="167" /></td>
+            <td style={{ color: 'var(--red-muted)' }}>Many accounts unused (48% pay digitally)</td>
+            <td style={{ color: 'var(--green)' }}>89% pay digitally</td>
           </tr>
           <tr>
             <td>Merchant incentive</td>
             <td>Raast QR fee subsidy, Sep 2025 to Jun 2026; continuation announced Nov 2026 <Src id="R4" /> <Src id="R12" /></td>
-            <td style={{ color: '#27AE60' }}>Zero MDR since 2020</td>
+            <td style={{ color: 'var(--green)' }}>Zero MDR since 2020</td>
             <td>Not assessed</td>
           </tr>
           <tr>
             <td>Basic phone channel</td>
             <td>IVR banking exists (46.1M users) <Src id="R1" p="9" />; no Raast basic phone channel found</td>
-            <td style={{ color: '#27AE60' }}>UPI123Pay</td>
-            <td style={{ color: '#27AE60' }}>Basic phone mobile money</td>
+            <td style={{ color: 'var(--green)' }}>UPI123Pay</td>
+            <td style={{ color: 'var(--green)' }}>Basic phone mobile money</td>
           </tr>
         </tbody>
       </table>

@@ -31,7 +31,7 @@ body {
     Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F8F9FA;
+  background-color: var(--page-bg, #F8F9FA);
   color: var(--black);
   font-size: 14px;
   line-height: 1.6;
@@ -520,7 +520,7 @@ body {
 }
 
 .section-divider span {
-  background: #F8F9FA;
+  background: var(--page-bg, #F8F9FA);
   padding: 0 20px;
   position: relative;
   font-size: 11px;
@@ -551,3 +551,127 @@ body {
 /* Phones: wide tables scroll inside their own box; long links wrap. */
 @media (max-width: 640px) { .data-table { display: block; max-width: 100%; overflow-x: auto; } }
 .block a, .source-registry li, .methodology-section li { overflow-wrap: anywhere; }
+
+
+/* Themes ------------------------------------------------------------------
+   Dark ("Signal", the default) and light, matching the portfolio site. The
+   theme is set on <html data-theme> by the script in index.html. Inline
+   colours in the components use the variables above, so they follow the
+   theme. Chart parts drawn by Recharts are recoloured here with CSS, which
+   overrides their SVG attributes. */
+:root[data-theme="dark"] {
+  --page-bg: #070B14;
+  --white: #0D1422;
+  --black: #EEF3FA;
+  --gray-dark: #A9B6C9;
+  --gray-annotation: #8C9AB0;
+  --gray-light: #121B2D;
+  --gray-border: rgba(151, 173, 214, 0.32);
+  --blue-primary: #5CC8FF;
+  --blue-dark: #9AD8FF;
+  --blue-light: rgba(92, 200, 255, 0.16);
+  --blue-faint: rgba(92, 200, 255, 0.08);
+  --blue-soft: #2E6F96;
+  --red-muted: #FF7A6B;
+  --red-light: rgba(255, 122, 107, 0.18);
+  --red-faint: rgba(255, 122, 107, 0.08);
+  --amber: #FFB454;
+  --amber-light: rgba(255, 180, 84, 0.12);
+  --green: #4FE3C1;
+  --green-light: rgba(79, 227, 193, 0.12);
+}
+
+:root[data-theme="light"] {
+  --page-bg: #F5F7FA;
+  --black: #0F1B2D;
+  --blue-soft: #85C1E9;
+}
+
+:root[data-theme="dark"] .block {
+  box-shadow: 0 0 0 1px rgba(151, 173, 214, 0.16);
+}
+
+:root[data-theme="dark"] a {
+  color: #4FE3C1;
+}
+
+:root[data-theme="light"] a {
+  color: #0A705E;
+}
+
+/* Charts in the dark theme */
+:root[data-theme="dark"] .recharts-cartesian-axis-tick-value,
+:root[data-theme="dark"] .recharts-label,
+:root[data-theme="dark"] .recharts-legend-item-text {
+  fill: #A9B6C9 !important;
+}
+
+:root[data-theme="dark"] .recharts-cartesian-grid line {
+  stroke: rgba(151, 173, 214, 0.14);
+}
+
+:root[data-theme="dark"] .recharts-cartesian-axis-line,
+:root[data-theme="dark"] .recharts-cartesian-axis-tick-line {
+  stroke: rgba(151, 173, 214, 0.32);
+}
+
+:root[data-theme="dark"] .recharts-surface text[fill="#2C3E50"] {
+  fill: #EEF3FA;
+}
+
+:root[data-theme="dark"] .recharts-area-area {
+  fill: rgba(255, 122, 107, 0.22);
+}
+
+:root[data-theme="dark"] .recharts-default-tooltip {
+  background: #121B2D !important;
+  border-color: rgba(151, 173, 214, 0.32) !important;
+  color: #EEF3FA;
+}
+
+:root[data-theme="dark"] .recharts-tooltip-cursor {
+  fill: rgba(151, 173, 214, 0.08);
+}
+
+/* Top bar: link back to the portfolio and the theme toggle */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: -24px 0 24px;
+}
+
+.topbar-home {
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--black) !important;
+}
+
+.topbar-home::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--tt-accent, #2E86C1);
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.topbar-home:hover {
+  color: var(--tt-accent) !important;
+}
+
+/* Theme toggle (same icons as the portfolio site). */
+.theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; flex: none; padding: 0; border: 1px solid var(--tt-line); border-radius: 8px; background: transparent; color: var(--tt-fg); cursor: pointer; transition: border-color 0.15s, color 0.15s; }
+.theme-toggle[hidden] { display: none; }
+.theme-toggle:hover { border-color: var(--tt-accent); color: var(--tt-accent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--tt-accent); outline-offset: 3px; }
+.theme-toggle svg { width: 18px; height: 18px; }
+:root[data-theme="dark"] .ti-moon, :root[data-theme="light"] .ti-sun { display: none; }
+:root[data-theme="dark"] { --tt-line: rgba(151,173,214,0.32); --tt-fg: #eef3fa; --tt-accent: #4fe3c1; color-scheme: dark; }
+:root[data-theme="light"] { --tt-line: rgba(15,27,45,0.26); --tt-fg: #0f1b2d; --tt-accent: #0a705e; color-scheme: light; }

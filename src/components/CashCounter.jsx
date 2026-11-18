@@ -21,7 +21,7 @@ function CashCounter({ data }) {
 
       <div className="metric-card">
         <div className="metric-label">Share of ATM transactions that are cash withdrawals, FY26</div>
-        <div className="big-number" style={{ color: RED }}>
+        <div className="big-number" style={{ color: 'var(--red-muted)' }}>
           {latest}<span className="big-number-unit">%</span>
         </div>
         <div style={{ width: '200px', height: '40px', margin: '16px auto 0' }}>
@@ -32,7 +32,7 @@ function CashCounter({ data }) {
             </AreaChart>
           </ResponsiveContainer>
         </div>
-        <p style={{ fontSize: '13px', color: '#7F8C8D', marginTop: '12px' }}>
+        <p style={{ fontSize: '13px', color: 'var(--gray-annotation)', marginTop: '12px' }}>
           FY22 to FY26: {years.map(y => data.cash_withdrawal_share_pct[y]).join('%, ')}%.
           My calculation: cash withdrawals divided by all ATM transactions, Table A-5 <Src id="R1" p="26" />.
           {' '}{data.total_atms_fy26.toLocaleString()} ATMs, about {data.daily_avg_per_atm_fy26} transactions per ATM per day <Src id="R1" p="8" />.

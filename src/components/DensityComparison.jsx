@@ -58,7 +58,7 @@ function DensityComparison({ data }) {
         </ResponsiveContainer>
       </div>
 
-      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px' }}>
+      <div style={{ fontSize: '11px', color: 'var(--gray-annotation)', marginTop: '6px' }}>
         End of June each year. FY25 values are the revised figures printed in the FY26 review; POS devices now
         include Soft POS, so they are not comparable with earlier years. Source: SBP Table A-1 <Src id="R1" p="24" />
       </div>

@@ -26,10 +26,10 @@ function MethodologyNote({ metadata }) {
             <li
               key={s.id}
               id={`source-${s.id}`}
-              style={{ padding: "10px 0", borderBottom: "1px solid #ECF0F1", fontSize: "12px", color: "#2C3E50" }}
+              style={{ padding: "10px 0", borderBottom: "1px solid var(--gray-light)", fontSize: "12px", color: "var(--black)" }}
             >
               {s.publisher}. <em>{s.title}</em>.{" "}
-              <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E86C1" }}>
+              <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "var(--blue-primary)" }}>
                 {s.url}
               </a>
               . <strong>{s.label}</strong>.
@@ -49,7 +49,7 @@ function MethodologyNote({ metadata }) {
             href="https://github.com/fawad-liaqat/raast-tracker/blob/main/METHODOLOGY.md"
             target="_blank"
             rel="noreferrer"
-            style={{ color: "#2E86C1" }}
+            style={{ color: "var(--blue-primary)" }}
           >
             METHODOLOGY.md
           </a>
@@ -75,7 +75,7 @@ function MethodologyNote({ metadata }) {
           <li><strong>Institutional Trust:</strong> Zucker (1986). Why trust in people can substitute for trust in institutions <Src id="R16" />.</li>
         </ul>
 
-        <p style={{ marginTop: "16px", fontSize: "11px", color: "#7F8C8D" }}>
+        <p style={{ marginTop: "16px", fontSize: "11px", color: "var(--gray-annotation)" }}>
           Data version: {metadata.version} | Extracted: {metadata.extraction_date} | Author: {metadata.author} | Last updated: November 2026
         </p>
       </div>

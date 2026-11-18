@@ -56,7 +56,7 @@ function ProgressView() {
           <tr><td>Adults with an account (Findex)</td><td colSpan="2">27% in the 2024 survey; no later survey yet</td><td>n/a</td><td>One year only</td><td><Src id="R2" p="298" /></td></tr>
         </tbody>
       </table>
-      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px' }}>
+      <div style={{ fontSize: '11px', color: 'var(--gray-annotation)', marginTop: '6px' }}>
         FY26 figures are provisional; FY25 figures are the revised values in the same report. Changes, shares and the cash
         withdrawal rate are my calculations from the cited tables. The Karandaaz row compares two survey rounds, not fiscal years.
       </div>

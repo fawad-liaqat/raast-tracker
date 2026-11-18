@@ -66,7 +66,7 @@ function GrowthChart({ data, retail }) {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px' }}>
+      <div style={{ fontSize: '11px', color: 'var(--gray-annotation)', marginTop: '6px' }}>
         Chart: all Raast transactions (bulk, person to person and person to merchant), FY23 to FY26.
         FY26 is provisional. Source: SBP Table A-15 <Src id="R1" p="31" />
       </div>

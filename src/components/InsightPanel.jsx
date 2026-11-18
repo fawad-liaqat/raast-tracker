@@ -9,7 +9,7 @@ function InsightPanel() {
         <h2>Why the Gap Exists: Access Comes Before Behaviour</h2>
       </div>
 
-      <p style={{ fontSize: '14px', color: '#566573', marginBottom: '24px', lineHeight: '1.7' }}>
+      <p style={{ fontSize: '14px', color: 'var(--gray-dark)', marginBottom: '24px', lineHeight: '1.7' }}>
         The FY25 edition framed the gap as a behaviour problem among users. The newer evidence points
         somewhere else first. Only 27% of Pakistani adults have an account, and 25% made or received
         a digital payment <Src id="R2" p="298" />. Findex notes that about 90% of Pakistani account owners

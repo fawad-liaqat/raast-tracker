@@ -9,11 +9,13 @@ import ActionableRecommendations from './components/ActionableRecommendations'
 import MethodologyNote from './components/MethodologyNote'
 import ProgressView from './components/ProgressView'
 import Src from './components/Src'
+import TopBar from './components/ThemeToggle'
 import data from '../data/sbp-fy26.json'
 
 function App() {
   return (
     <div className="dashboard">
+      <TopBar />
       <header className="dashboard-header">
         <h1>Raast Adoption Gap Tracker</h1>
         <p className="subtitle">
@@ -23,19 +25,19 @@ function App() {
         </p>
         <div className="header-stats">
           <div className="header-stat">
-            <div className="header-stat-number" style={{ color: '#D4A017' }}>27%</div>
+            <div className="header-stat-number" style={{ color: 'var(--amber)' }}>27%</div>
             <div className="header-stat-label">Adults with an account <Src id="R2" p="298" /></div>
           </div>
           <div className="header-stat">
-            <div className="header-stat-number" style={{ color: '#2E86C1' }}>92%</div>
+            <div className="header-stat-number" style={{ color: 'var(--blue-primary)' }}>92%</div>
             <div className="header-stat-label">Retail payments digital by count <Src id="R1" p="7" /></div>
           </div>
           <div className="header-stat">
-            <div className="header-stat-number" style={{ color: '#C0392B' }}>38%</div>
+            <div className="header-stat-number" style={{ color: 'var(--red-muted)' }}>38%</div>
             <div className="header-stat-label">Digital by value <Src id="R1" p="7" /></div>
           </div>
         </div>
-        <p style={{ fontSize: '12px', color: '#7F8C8D', marginTop: '12px' }}>
+        <p style={{ fontSize: '12px', color: 'var(--gray-annotation)', marginTop: '12px' }}>
           Updated November 2026 with SBP FY26 data and new sources. Pakistan payment data: FY26 (July 2025 to June 2026),
           provisional. Account ownership: Findex 2025, survey year 2024.{' '}
           <a href="#progress">Progress from FY25 to FY26</a> | <a href="?edition=fy25">FY25 edition (March 2026)</a>

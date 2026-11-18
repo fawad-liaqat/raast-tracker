@@ -1,17 +1,16 @@
 import React from "react";
 import Src from "./Src";
 
-const BLUE = "#2E86C1";
 
 const tile = {
-  background: "#D4E6F1",
+  background: "var(--blue-light)",
   borderRadius: "6px",
   padding: "16px",
   textAlign: "center",
 };
 const tileLabel = {
   fontSize: "11px",
-  color: "#7F8C8D",
+  color: "var(--gray-annotation)",
   textTransform: "uppercase",
   letterSpacing: "0.5px",
 };
@@ -42,10 +41,10 @@ function AdoptionGapIndex({ data, userAdoption }) {
         <div className="metric-label">
           Raast person to person payments per registered Raast ID, FY26
         </div>
-        <div className="big-number" style={{ color: BLUE }}>
+        <div className="big-number" style={{ color: 'var(--blue-primary)' }}>
           {primary.computed_value}
         </div>
-        <p style={{ fontSize: "13px", color: "#7F8C8D", marginTop: "12px" }}>
+        <p style={{ fontSize: "13px", color: "var(--gray-annotation)", marginTop: "12px" }}>
           payments per ID per year (about {(primary.computed_value / 12).toFixed(1)} a month).
           This is my calculation, not an SBP figure.
         </p>
@@ -61,19 +60,19 @@ function AdoptionGapIndex({ data, userAdoption }) {
       >
         <div style={tile}>
           <div style={tileLabel}>Numerator</div>
-          <div style={{ fontSize: "26px", fontWeight: "700", color: BLUE }}>
+          <div style={{ fontSize: "26px", fontWeight: "700", color: 'var(--blue-primary)' }}>
             {primary.numerator_millions.toLocaleString()}M
           </div>
-          <div style={{ fontSize: "11px", color: "#7F8C8D" }}>
+          <div style={{ fontSize: "11px", color: "var(--gray-annotation)" }}>
             Raast P2P payments, FY26 <Src id="R1" p="31" />
           </div>
         </div>
         <div style={tile}>
           <div style={tileLabel}>Denominator</div>
-          <div style={{ fontSize: "26px", fontWeight: "700", color: BLUE }}>
+          <div style={{ fontSize: "26px", fontWeight: "700", color: 'var(--blue-primary)' }}>
             {primary.denominator_millions}M
           </div>
-          <div style={{ fontSize: "11px", color: "#7F8C8D" }}>
+          <div style={{ fontSize: "11px", color: "var(--gray-annotation)" }}>
             Raast P2P IDs, end June 2026 <Src id="R1" p="11" />
           </div>
         </div>
@@ -121,7 +120,7 @@ function AdoptionGapIndex({ data, userAdoption }) {
           ))}
         </tbody>
       </table>
-      <div style={{ fontSize: "11px", color: "#7F8C8D", marginTop: "6px" }}>
+      <div style={{ fontSize: "11px", color: "var(--gray-annotation)", marginTop: "6px" }}>
         Registered users at end June; categories overlap, since one person can hold several. Growth is my
         calculation. Source: SBP Payment Systems Snapshot <Src id="R1" p="9" />
       </div>

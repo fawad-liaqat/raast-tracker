@@ -49,7 +49,7 @@ function ActionableRecommendations() {
         <h2>Five Actions Worth Testing</h2>
       </div>
 
-      <p style={{ fontSize: '13px', color: '#566573', marginBottom: '24px', lineHeight: '1.6' }}>
+      <p style={{ fontSize: '13px', color: 'var(--gray-dark)', marginBottom: '24px', lineHeight: '1.6' }}>
         These are my proposals, ordered access first, then use. Each names who would act, how it would work,
         and the evidence behind it. None has been tested in Pakistan by me.
       </p>

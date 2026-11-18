@@ -6,6 +6,7 @@ import {
 import Src, { SourceIndexContext } from '../components/Src'
 import { SOURCES } from '../sources'
 import d from '../../data/sbp-fy25-edition.json'
+import TopBar from '../components/ThemeToggle'
 
 const BLUE = '#2E86C1'
 const BLUE_LIGHT = '#85C1E9'
@@ -40,7 +41,7 @@ function GrowthBlock() {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px' }}>
+      <div style={{ fontSize: '11px', color: 'var(--gray-annotation)', marginTop: '6px' }}>
         All Raast transactions (bulk, person to person and person to merchant). Source: SBP Table A-15 <Src id="R1" p="31" />
       </div>
       <div className="insight-box">
@@ -91,7 +92,7 @@ function DensityBlock() {
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px' }}>
+      <div style={{ fontSize: '11px', color: 'var(--gray-annotation)', marginTop: '6px' }}>
         End of June each year. Source: SBP Table A-1 <Src id="R1" p="24" />
       </div>
       <div className="insight-box">
@@ -125,13 +126,13 @@ function CashBlock() {
       </div>
       <div className="metric-card">
         <div className="metric-label">ATM Cash Withdrawal Rate, FY25</div>
-        <div className="big-number" style={{ color: RED }}>{a.cash_withdrawal_share_pct.fy25}<span className="big-number-unit">%</span></div>
+        <div className="big-number" style={{ color: 'var(--red-muted)' }}>{a.cash_withdrawal_share_pct.fy25}<span className="big-number-unit">%</span></div>
         <div style={{ width: '200px', height: '40px', margin: '16px auto 0' }}>
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={spark}><Area type="monotone" dataKey="pct" stroke={RED} fill="#FADBD8" strokeWidth={2} /></AreaChart>
           </ResponsiveContainer>
         </div>
-        <p style={{ fontSize: '13px', color: '#7F8C8D', marginTop: '12px' }}>
+        <p style={{ fontSize: '13px', color: 'var(--gray-annotation)', marginTop: '12px' }}>
           FY22 to FY25: 96.9%, 97.2%, 97.5%, 97.6% (my calculation, cash withdrawals divided by all ATM transactions) <Src id="R1" p="26" />.
           {' '}{a.total_atms_fy25.toLocaleString()} ATMs, about {a.daily_avg_per_atm_fy25} transactions per ATM per day (my calculation) <Src id="R1" p="24" /> <Src id="R1" p="26" />.
         </p>
@@ -166,8 +167,8 @@ function IndexBlock() {
       </div>
       <div className="metric-card">
         <div className="metric-label">Raast P2P payments per mobile banking user, FY25</div>
-        <div className="big-number" style={{ color: BLUE }}>{g.computed_value}</div>
-        <p style={{ fontSize: '13px', color: '#7F8C8D', marginTop: '12px' }}>
+        <div className="big-number" style={{ color: 'var(--blue-primary)' }}>{g.computed_value}</div>
+        <p style={{ fontSize: '13px', color: 'var(--gray-annotation)', marginTop: '12px' }}>
           {g.numerator_millions.toLocaleString()} million P2P payments <Src id="R1" p="31" /> divided by {g.denominator_millions} million
           mobile banking users <Src id="R1" p="24" />, about one a week. Mobile banking users are taken as the main Raast enabled
           base; categories overlap, and SBP does not report active users.
@@ -181,7 +182,7 @@ function IndexBlock() {
           <tr><td>EMI e-wallet users</td><td>{u.ewallet_users_m.fy24}</td><td>{u.ewallet_users_m.fy25}</td><td>{growth(u.ewallet_users_m)}</td></tr>
         </tbody>
       </table>
-      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px' }}>Source: SBP Table A-1 <Src id="R1" p="24" />. Growth is my calculation.</div>
+      <div style={{ fontSize: '11px', color: 'var(--gray-annotation)', marginTop: '6px' }}>Source: SBP Table A-1 <Src id="R1" p="24" />. Growth is my calculation.</div>
     </section>
   )
 }
@@ -193,7 +194,7 @@ function InsightBlock() {
         <div className="block-label">Three Layer Framework</div>
         <h2>The Behavioral Last Mile: Three Compounding Barriers</h2>
       </div>
-      <p style={{ fontSize: '14px', color: '#566573', marginBottom: '24px', lineHeight: '1.7' }}>
+      <p style={{ fontSize: '14px', color: 'var(--gray-dark)', marginBottom: '24px', lineHeight: '1.7' }}>
         The gap between an 88% digital share by number and a cash heavy economy is not only an infrastructure problem.
         This edition reads it as a demand side problem with three layers that reinforce each other.
       </p>
@@ -252,7 +253,7 @@ function ComparativeBlock() {
           <tr><td>Adults with an account (Findex 2025, survey year 2024)</td><td>27%</td><td>89%</td><td>90%</td></tr>
         </tbody>
       </table>
-      <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px', textAlign: 'right' }}>
+      <div style={{ fontSize: '11px', color: 'var(--gray-annotation)', marginTop: '6px', textAlign: 'right' }}>
         Account row: World Bank Findex 2025, Table B.1 <Src id="R2" p="297" /> <Src id="R2" p="298" />. Pakistan's own survey puts inclusion at 35% in 2024 on its own definition <Src id="R3" p="7" />.
       </div>
       <div className="insight-box success" style={{ marginTop: '16px' }}>
@@ -301,8 +302,8 @@ function SourcesBlock() {
       </p>
       <ol style={{ paddingLeft: '20px' }}>
         {LIST.map((s) => (
-          <li key={s.id} id={`source-${s.id}`} style={{ padding: '8px 0', fontSize: '12px', borderBottom: '1px solid #ECF0F1' }}>
-            {s.publisher}. <em>{s.title}</em>. <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#2E86C1' }}>{s.url}</a>. <strong>{s.label}</strong>.
+          <li key={s.id} id={`source-${s.id}`} style={{ padding: '8px 0', fontSize: '12px', borderBottom: '1px solid var(--gray-light)' }}>
+            {s.publisher}. <em>{s.title}</em>. <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--blue-primary)' }}>{s.url}</a>. <strong>{s.label}</strong>.
           </li>
         ))}
       </ol>
@@ -314,7 +315,8 @@ function FY25App() {
   return (
     <SourceIndexContext.Provider value={INDEX}>
       <div className="dashboard">
-        <div style={{ background: '#EBF5FB', border: '1px solid #2E86C1', borderRadius: '6px', padding: '10px 14px', fontSize: '13px', marginBottom: '16px' }}>
+        <TopBar />
+        <div style={{ background: 'var(--blue-faint)', border: '1px solid var(--blue-primary)', borderRadius: '6px', padding: '10px 14px', fontSize: '13px', marginBottom: '16px' }}>
           FY25 edition, first published March 2026. <a href="./">See the current edition with FY26 data and the progress from FY25 to FY26.</a>
         </div>
         <header className="dashboard-header">
@@ -324,9 +326,9 @@ function FY25App() {
             with FY25 data, explains why it exists, and identifies what works elsewhere.
           </p>
           <div className="header-stats">
-            <div className="header-stat"><div className="header-stat-number" style={{ color: BLUE }}>88%</div><div className="header-stat-label">Digital by number <Src id="R1" p="7" /></div></div>
-            <div className="header-stat"><div className="header-stat-number" style={{ color: RED }}>97.6%</div><div className="header-stat-label">ATM cash withdrawal <Src id="R1" p="26" /></div></div>
-            <div className="header-stat"><div className="header-stat-number" style={{ color: '#D4A017' }}>35%</div><div className="header-stat-label">Financial inclusion (K-FIS 2024) <Src id="R3" p="7" /></div></div>
+            <div className="header-stat"><div className="header-stat-number" style={{ color: 'var(--blue-primary)' }}>88%</div><div className="header-stat-label">Digital by number <Src id="R1" p="7" /></div></div>
+            <div className="header-stat"><div className="header-stat-number" style={{ color: 'var(--red-muted)' }}>97.6%</div><div className="header-stat-label">ATM cash withdrawal <Src id="R1" p="26" /></div></div>
+            <div className="header-stat"><div className="header-stat-number" style={{ color: 'var(--amber)' }}>35%</div><div className="header-stat-label">Financial inclusion (K-FIS 2024) <Src id="R3" p="7" /></div></div>
           </div>
         </header>
         <div className="section-divider"><span>Part 1: The Data</span></div>
