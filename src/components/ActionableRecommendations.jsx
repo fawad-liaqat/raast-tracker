@@ -31,7 +31,7 @@ function ActionableRecommendations() {
       implementer: 'SBP and branchless banking providers',
       mechanism: 'Reward agents for helping customers make Raast and merchant payments, not only for cash in and cash out.',
       effect: 'Uses 837,244 agents, many already known in their communities, as guides to digital use.',
-      precedent: (<>Kenya's agent model is often cited here. I have not re-checked a primary source for it this round <Src id="R11" />. Agent count: <Src id="R1" p="24" />.</>),
+      precedent: (<>Kenya's M-Pesa grew alongside a fourfold expansion of its agent network <Src id="R11" />. Agent count: <Src id="R1" p="24" />.</>),
     },
     {
       title: 'Set Urdu first and voice first design standards',

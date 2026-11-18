@@ -7,7 +7,7 @@ Updated November 2026 with SBP FY26 data and new sources.
 ### Primary source
 **State Bank of Pakistan, Annual Payment Systems Review FY 2025-26 (provisional figures)** [1]
 - Listed on the SBP website as "Annual Payment Systems Review of FY26", 6 October 2026
-- URL: https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY26.pdf
+- URL: https://www.sbp.org.pk/assets/document/publications/Annual-Payment-Systems-Review-FY26.pdf
 - Coverage: July 2025 to June 2026 (FY26), with revised FY25 columns and earlier years in Annexure A
 - Pages used: 7, 8, 9, 10, 11, 15, 21, 24, 26, 31 (printed page numbers)
 
@@ -16,12 +16,11 @@ use the same series.
 The FY26 review's POS device series includes Soft POS.
 
 ### Other sources
-The dashboard's Sources section lists all sources with dates, links and access dates:
+The dashboard's Sources section lists every source with its publisher, link and label:
 World Bank Global Findex 2025 [2]; the Karandaaz Financial Inclusion Survey 2024 narrative
-report [3]; the SBP Governor's Annual Report 2025-26 on the Raast QR subsidy [4]; Government of India releases on UPI [5, 6]; a press report on India's zero MDR
+report [3]; the SBP circular that allocated the Raast QR subsidy [4]; Government of India releases on UPI [5, 6]; a press report on India's zero MDR
 decision [7]; the Reserve Bank of India release on UPI123Pay [8]; a press report on Safaricom's
-FY26 M-Pesa results [9]; the SBP release on Raast's launch [10]; Central Bank of Kenya reports
-index [11]; a Business Recorder report on continuing the Raast QR subsidy [12].
+FY26 M-Pesa results [9]; the SBP release on Raast's launch [10]; a study of M-Pesa and its agent network in Kenya [11]; a Business Recorder report on continuing the Raast QR subsidy [12]; and four works of theory [13 to 16].
 
 ## Extraction process
 
@@ -74,15 +73,19 @@ Raast P2P payments / mobile banking users:
 
 ## Sources
 
-1. State Bank of Pakistan. *Annual Payment Systems Review FY 2025-26* (provisional). October 2026. https://www.sbp.org.pk/PS/PDF/Annual-Payment-Systems-Review-FY26.pdf. Accessed 17 November 2026.
-2. World Bank. *The Global Findex Database 2025*. 2025. https://www.worldbank.org/en/publication/globalfindex. Accessed 17 November 2026.
-3. Karandaaz Pakistan (Semiotics Consultants). *Karandaaz Financial Inclusion Survey (K-FIS), Narrative Report*, survey year 2024. April 2025. pp. 7, 11, 25, 27, 29, 30. Local PDF supplied by the owner; https://www.karandaaz.com.pk/research/publications/karandaaz-financial-inclusion-survey-k-fis-narrative-report (link not opened). Accessed 17 November 2026. Primary.
-4. State Bank of Pakistan. *Governor's Annual Report 2025-26*, pp. 21 and 58. Local copy supplied by the owner; no public link confirmed. Accessed 17 November 2026. Primary.
-5. Government of India, Ministry of Finance, via PIB. *Nearly 55.49 crore users onboarded on UPI as in June 2026*. 20 July 2026. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286608&reg=48&lang=2. Accessed 17 November 2026.
-6. Government of India, Ministry of Finance, via PIB. *UPI completes 10 years of digital payments revolution*. 24 August 2026. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2302657&reg=48&lang=2. Accessed 17 November 2026.
-7. Outlook Business. *No MDR charges from Jan 1 on UPI, RuPay transactions*. 28 December 2019. https://www.outlookbusiness.com/talking-money/no-mdr-charges-from-jan-1-on-upi-rupay-transactions-4103. Accessed 17 November 2026. Secondary.
-8. Reserve Bank of India. *UPI for feature phones (UPI123Pay) and DigiSaathi helpline*. 8 March 2022. https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=53385. Accessed 16 November 2026.
-9. Tech-ish. *Safaricom FY26 M-PESA results explained*. 7 May 2026. https://tech-ish.com/2026/05/07/safaricom-fy26-mpesa-results-explained/. Accessed 17 November 2026. Secondary.
-10. State Bank of Pakistan. *Press release on the launch of Raast's first phase*. 11 January 2021. https://www.sbp.org.pk/press/2021/Pr-11-Jan-21.pdf. Accessed 17 November 2026.
-11. Central Bank of Kenya. *Annual reports index*. https://www.centralbank.go.ke/reports/cbk-annual-reports/. Not re-read in November 2026.
-12. Business Recorder. *Govt moves to continue subsidy for Raast QR payments*. 13 November 2026. https://www.brecorder.com/news/40448745/govt-moves-to-continue-subsidy-for-raast-qr-payments. Accessed 17 November 2026. Secondary.
+1. State Bank of Pakistan. *Annual Payment Systems Review FY 2025-26*. https://www.sbp.org.pk/assets/document/publications/Annual-Payment-Systems-Review-FY26.pdf. Primary.
+2. World Bank. *The Global Findex Database 2025: Connectivity and Financial Inclusion in the Digital Economy*. https://www.worldbank.org/en/publication/globalfindex. Primary.
+3. Karandaaz Pakistan. *Karandaaz Financial Inclusion Survey (K-FIS): Narrative Report*. https://www.karandaaz.com.pk/research/publications/karandaaz-financial-inclusion-survey-k-fis-narrative-report. Primary.
+4. State Bank of Pakistan. *PSP&OD Circular No. 03 of 2025: Allocation of Subsidy for Raast Person to Merchant (P2M) QR Payments*. https://www.sbp.org.pk/psd/2025/C3.htm. Primary.
+5. Government of India, Ministry of Finance (Press Information Bureau). *Nearly 55.49 Crore Users Onboarded on UPI as in June 2026*. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286608&reg=48&lang=2. Primary.
+6. Government of India, Ministry of Finance (Press Information Bureau). *UPI Completes 10 Years of Digital Payments Revolution*. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2302657&reg=48&lang=2. Primary.
+7. Outlook Business. *No MDR charges from Jan 1 on UPI, RuPay transactions*. https://www.outlookbusiness.com/talking-money/no-mdr-charges-from-jan-1-on-upi-rupay-transactions-4103. Secondary.
+8. Reserve Bank of India. *Reserve Bank of India launches UPI for feature phones (UPI123Pay) and a 24x7 helpline for digital payments (DigiSaathi)*. https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=53385. Primary.
+9. Tech-ish. *Safaricom FY26: M-PESA Hits KES 183 Billion, Now 45.6% of Revenue*. https://tech-ish.com/2026/05/07/safaricom-fy26-mpesa-results-explained/. Secondary.
+10. State Bank of Pakistan. *PM launches Raast, Pakistan's instant payment system (press release on the first phase, bulk payments)*. https://www.sbp.org.pk/press/2021/Pr-11-Jan-21.pdf. Primary.
+11. Jack, W. and Suri, T., American Economic Review 104(1). *Risk Sharing and Transactions Costs: Evidence from Kenya's Mobile Money Revolution*. https://www.aeaweb.org/articles?id=10.1257/aer.104.1.183. Secondary.
+12. Business Recorder. *Govt moves to continue subsidy for Raast QR payments*. https://www.brecorder.com/news/40448745/govt-moves-to-continue-subsidy-for-raast-qr-payments. Secondary.
+13. Davis, F. D., MIS Quarterly 13(3). *Perceived usefulness, perceived ease of use, and user acceptance of information technology*. https://doi.org/10.2307/249008. Secondary.
+14. Rogers, E. M., Free Press. *Diffusion of Innovations, 5th edition*. https://openlibrary.org/books/OL15577453M/Diffusion_of_innovations. Secondary.
+15. Kahneman, D. and Tversky, A., Econometrica 47(2). *Prospect theory: an analysis of decision under risk*. https://doi.org/10.2307/1914185. Secondary.
+16. Zucker, L. G., Institute of Industrial Relations, University of California, Berkeley. *Production of trust: institutional sources of economic structure, 1840 to 1920 (working paper version of the chapter in Research in Organizational Behavior 8)*. https://digitalassets.lib.berkeley.edu/irle/ucb/text/irla0277.pdf. Secondary.

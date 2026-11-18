@@ -73,8 +73,8 @@ function ComparativeAnalysis() {
           <div className="label">adults with an account, 2024 <Src id="R2" p="297" /></div>
           <div style={{ fontSize: '11px', color: '#566573', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
             <strong>Model:</strong> mobile money run by a telecom company and reached through agents and basic
-            phones. 89% of adults made or received a digital payment <Src id="R2" p="297" />. The agent story is
-            context from the wider literature, not re-checked against a primary source this round <Src id="R11" />.
+            phones. 89% of adults made or received a digital payment <Src id="R2" p="297" />. Its agent network
+            expanded fourfold as M-Pesa spread <Src id="R11" />.
           </div>
         </div>
 
@@ -84,7 +84,7 @@ function ComparativeAnalysis() {
           <div className="label">adults with an account, 2024 <Src id="R2" p="298" /></div>
           <div style={{ fontSize: '11px', color: '#566573', marginTop: '8px', textAlign: 'left', lineHeight: '1.5' }}>
             <strong>Where it stands:</strong> a fast growing rail (2.76 billion transactions in FY26) <Src id="R1" p="31" />,
-            a merchant subsidy that ran from 1 September 2025 to 30 June 2026 <Src id="R4" p="58" /> and coincided with QR merchants tripling <Src id="R1" p="7" />, and a small account base.
+            a merchant subsidy that ran from 1 September 2025 to 30 June 2026 <Src id="R4" /> and coincided with QR merchants tripling <Src id="R1" p="7" />, and a small account base.
             Pakistan's own survey puts inclusion at 35% <Src id="R3" p="7" />.
           </div>
         </div>
@@ -117,7 +117,7 @@ function ComparativeAnalysis() {
           </tr>
           <tr>
             <td>Merchant incentive</td>
-            <td>Raast QR fee subsidy, Sep 2025 to Jun 2026; continuation announced Nov 2026 <Src id="R4" p="58" /> <Src id="R12" /></td>
+            <td>Raast QR fee subsidy, Sep 2025 to Jun 2026; continuation announced Nov 2026 <Src id="R4" /> <Src id="R12" /></td>
             <td style={{ color: '#27AE60' }}>Zero MDR since 2020</td>
             <td>Not assessed</td>
           </tr>

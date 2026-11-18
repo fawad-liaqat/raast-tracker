@@ -70,7 +70,7 @@ function InsightPanel() {
           <strong>Evidence:</strong> Among people who already bank, 97.6% of ATM transactions are cash withdrawals
           (my calculation) <Src id="R1" p="26" />. Merchant payments are 6.6% of Raast volume (my calculation) <Src id="R1" p="31" />.
           When incentives changed, merchants signed up: QR merchants more than tripled within a year under the
-          Cashless Pakistan subsidy <Src id="R1" p="7" />. The subsidy, 0.5% of value or PKR 100 per payment, whichever is lower, ran from 1 September 2025 to 30 June 2026 <Src id="R4" p="58" />. On 13 November 2026 the government said it would continue subsidising merchant fees on Raast QR payments; the terms were not published <Src id="R12" />.
+          Cashless Pakistan subsidy <Src id="R1" p="7" />. The subsidy, 0.5% of value or PKR 100 per payment, whichever is lower, ran from 1 September 2025 to 30 June 2026 <Src id="R4" />. On 13 November 2026 the government said it would continue subsidising merchant fees on Raast QR payments; the terms were not published <Src id="R12" />.
         </div>
         <div className="layer-comparison">
           <strong>Comparative:</strong> India removed the merchant discount rate on UPI and RuPay payments from

@@ -302,7 +302,7 @@ function SourcesBlock() {
       <ol style={{ paddingLeft: '20px' }}>
         {LIST.map((s) => (
           <li key={s.id} id={`source-${s.id}`} style={{ padding: '8px 0', fontSize: '12px', borderBottom: '1px solid #ECF0F1' }}>
-            {s.publisher}. <em>{s.title}</em>. {s.date}. <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#2E86C1' }}>{s.url}</a>. Accessed {s.accessed}. <strong>{s.label}</strong>.
+            {s.publisher}. <em>{s.title}</em>. <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: '#2E86C1' }}>{s.url}</a>. <strong>{s.label}</strong>.
           </li>
         ))}
       </ol>

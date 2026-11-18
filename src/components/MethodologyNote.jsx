@@ -1,5 +1,6 @@
 import React from "react";
 import { SOURCES } from "../sources";
+import Src from "./Src";
 
 function MethodologyNote({ metadata }) {
   return (
@@ -15,8 +16,8 @@ function MethodologyNote({ metadata }) {
       >
         <p style={{ marginBottom: "16px" }}>
           Each figure on this page carries a marker such as [1, p. 31]. The number points to the list below and
-          the page is the printed page of that document. Sources marked SECONDARY are press reports of someone
-          else's data. Figures I worked out myself are labelled "my calculation" next to their inputs.
+          the page is the printed page of that document. Primary means the issuing body's own document or data;
+          Secondary means reporting or analysis about it. Figures I worked out myself are labelled "my calculation" next to their inputs.
         </p>
 
         <h3 id="sources">Sources</h3>
@@ -27,16 +28,11 @@ function MethodologyNote({ metadata }) {
               id={`source-${s.id}`}
               style={{ padding: "10px 0", borderBottom: "1px solid #ECF0F1", fontSize: "12px", color: "#2C3E50" }}
             >
-              {s.publisher}. <em>{s.title}</em>. {s.date}.{" "}
-              {s.url ? (
-                <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E86C1" }}>
-                  {s.url}
-                </a>
-              ) : (
-                "No public link confirmed"
-              )}
-              . Accessed {s.accessed}. <strong>{s.label}</strong>.
-              {s.note ? <span style={{ color: "#7F8C8D" }}> {s.note}</span> : null}
+              {s.publisher}. <em>{s.title}</em>.{" "}
+              <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: "#2E86C1" }}>
+                {s.url}
+              </a>
+              . <strong>{s.label}</strong>.
             </li>
           ))}
         </ol>
@@ -71,12 +67,12 @@ function MethodologyNote({ metadata }) {
           <li>Karandaaz survey figures come from the K-FIS 2024 narrative report. Its inclusion definition (registered users) differs from Findex, so the two are not directly comparable.</li>
         </ul>
 
-        <h3 style={{ marginTop: "24px" }}>Theoretical framework (background reading, not used as data)</h3>
+        <h3 style={{ marginTop: "24px" }}>Theoretical framework (ideas, not data)</h3>
         <ul>
-          <li><strong>Technology Acceptance Model:</strong> Davis (1989). Perceived usefulness and ease of use.</li>
-          <li><strong>Diffusion of Innovations:</strong> Rogers (2003). How adoption spreads from early adopters to the majority.</li>
-          <li><strong>Prospect Theory:</strong> Kahneman and Tversky (1979). Loss aversion and perceived risk.</li>
-          <li><strong>Institutional Trust:</strong> Zucker (1986). Why trust in people can substitute for trust in institutions.</li>
+          <li><strong>Technology Acceptance Model:</strong> Davis (1989). Perceived usefulness and ease of use <Src id="R13" />.</li>
+          <li><strong>Diffusion of Innovations:</strong> Rogers (2003). How adoption spreads from early adopters to the majority <Src id="R14" />.</li>
+          <li><strong>Prospect Theory:</strong> Kahneman and Tversky (1979). Loss aversion and perceived risk <Src id="R15" />.</li>
+          <li><strong>Institutional Trust:</strong> Zucker (1986). Why trust in people can substitute for trust in institutions <Src id="R16" />.</li>
         </ul>
 
         <p style={{ marginTop: "16px", fontSize: "11px", color: "#7F8C8D" }}>

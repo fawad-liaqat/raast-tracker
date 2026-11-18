@@ -64,7 +64,7 @@ function ProgressView() {
         <span className="insight-label analysis">Plain reading</span>
         <p>
           <strong>The rails moved fast.</strong> Raast more than doubled, merchant payments on it went from almost none to
-          182.5 million, and QR merchants more than tripled while a merchant fee subsidy was in place <Src id="R4" p="58" />.
+          182.5 million, and QR merchants more than tripled <Src id="R1" p="7" /> while a merchant fee subsidy was in place <Src id="R4" />.
           The digital share of payment value rose from 29% to 38%.
         </p>
         <p>
