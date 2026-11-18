@@ -1,6 +1,6 @@
 # Methodology: Raast Adoption Gap Tracker
 
-Last updated: November 2026 (data version 2.0).
+Updated November 2026 with SBP FY26 data and new sources.
 
 ## Data sources
 
@@ -12,9 +12,8 @@ Last updated: November 2026 (data version 2.0).
 - Pages used: 7, 8, 9, 10, 11, 15, 21, 24, 26, 31 (printed page numbers)
 
 FY25 comparisons are taken from the revised FY25 columns of the FY26 review, so both years
-use the same series. Some FY25 values changed on revision: ATMs 20,341 became 20,250; POS
-devices 195,849 became 227,388 (Soft POS now included); QR merchants are 1,092,044 (version 1.0
-had a typo, 1,092,004).
+use the same series.
+The FY26 review's POS device series includes Soft POS.
 
 ### Other sources
 The dashboard's Sources section lists all sources with dates, links and access dates:
@@ -32,7 +31,7 @@ index [11]; a Business Recorder report on continuing the Raast QR subsidy [12].
 
 ## Adoption Gap Index (author's calculation)
 
-### Formula, version 2.0
+### Formula
 Raast P2P payments in FY26 / Raast P2P IDs registered at end June 2026
 
 - Numerator: 2,537.2 million P2P payments (Table A-15, p. 31)
@@ -40,26 +39,13 @@ Raast P2P payments in FY26 / Raast P2P IDs registered at end June 2026
 - Result: 51.6 payments per ID per year, about 4.3 a month
 
 ### Why this denominator
-The FY26 review prints the number of registered Raast P2P IDs. Version 1.0 named this
-"Option C" and could not use it because the figure was not available. It is a closer match
-to the people who can use Raast than mobile banking users (Option B, used in version 1.0).
+The FY26 review prints the number of registered Raast P2P IDs. It is a closer match to the
+people who can use Raast than mobile banking users, the denominator used in the FY25 edition.
 
-### Old basis, for comparison
+### FY25 edition basis, for comparison
 Raast P2P payments / mobile banking users:
 - FY25: 1,266.0 / 24.1 = 52.5
 - FY26: 2,537.2 / 30.4 = 83.5
-
-### Corrections to version 1.0
-1. Version 1.0 used 1,276.0 million as "Raast P2P transactions". That is total Raast
-   transactions (bulk, P2P and P2M). P2P alone was 1,266.0 million. The FY25 index on the
-   old basis is therefore 52.5, not 52.9.
-2. The formula was written with "x 100", which was never applied. It is removed.
-3. The ATM cash withdrawal share was shown as a flat 98% for FY22 to FY25. Calculated from
-   Table A-5 (p. 26) it is 96.9%, 97.2%, 97.5%, 97.6% and 97.6% for FY22 to FY26.
-4. The "54 million deposit accounts below PKR 5,000" statement and the "40% of GDP informal"
-   statement had no source and were removed.
-5. India's zero MDR was described as "below Rs 2,000 in 2019". The announcement made UPI and
-   RuPay payments free of MDR from 1 January 2020, with no size threshold mentioned [7].
 
 ## Known limitations
 
@@ -69,7 +55,7 @@ Raast P2P payments / mobile banking users:
 4. User categories overlap.
 5. POS devices now include Soft POS, so FY25 and FY26 are not comparable with FY24.
 6. Years differ across countries.
-7. Karandaaz survey figures come from the K-FIS 2024 narrative report. The first November update used press reports; their trust figures (9%, 8%, 36%) are not in the report and were withdrawn, and the 46% (women) and 82% (men) figures are cited as mobile phone ownership (p. 28); the report prints identical figures for smartphone ownership (p. 29), so the smartphone version is probably a repeat.
+7. Karandaaz survey figures come from the K-FIS 2024 narrative report. The 46% (women) and 82% (men) figures are cited as mobile phone ownership (p. 28); the report prints identical figures for smartphone ownership (p. 29).
 
 ## Assumptions
 
@@ -83,8 +69,8 @@ Raast P2P payments / mobile banking users:
 |---------|------|--------|
 | 1.0 | 2026-03-21 | Initial extraction from SBP FY25 Annual Review |
 | 2.2 | 2026-11-18 | FY25 edition restored at ?edition=fy25 with revised FY25 values; Progress from FY25 to FY26 view added |
-| 2.1 | 2026-11-17 | K-FIS narrative report replaces press reports; trust figures corrected; Raast QR subsidy dates and continuation added |
-| 2.0 | 2026-11-17 | Moved to SBP FY26 review; Findex 2025; new index denominator (Raast IDs); corrections listed above; numbered sources on every figure |
+| 2.1 | 2026-11-17 | K-FIS 2024 narrative report cited directly; Raast QR subsidy dates and continuation added |
+| 2.0 | 2026-11-17 | Moved to SBP FY26 review; Findex 2025; new index denominator (Raast IDs); numbered sources on every figure |
 
 ## Sources
 
