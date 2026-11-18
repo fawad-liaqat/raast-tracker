@@ -43,13 +43,12 @@ function MethodologyNote({ metadata }) {
 
         <h3 style={{ marginTop: "24px" }}>Adoption Gap Index</h3>
         <p>
-          <strong>Formula (version 2.0):</strong> Raast P2P payments in FY26 divided by Raast P2P IDs registered at end
+          <strong>Formula:</strong> Raast P2P payments in FY26 divided by Raast P2P IDs registered at end
           June 2026. 2,537.2 million / 49.2 million = 51.6 payments per ID per year. Inputs: source 1, p. 31 and p. 11.
         </p>
         <p>
-          <strong>Old basis, kept for comparison:</strong> Raast P2P payments divided by mobile banking users. FY25: 1,266.0 / 24.1 = 52.5.
-          FY26: 2,537.2 / 30.4 = 83.5. Version 1.0 printed 52.9 because it used total Raast transactions (1,276.0 million)
-          as if they were P2P. Full notes in{" "}
+          <strong>FY25 edition basis, for comparison:</strong> Raast P2P payments divided by mobile banking users. FY25: 1,266.0 / 24.1 = 52.5.
+          FY26: 2,537.2 / 30.4 = 83.5. Full notes in{" "}
           <a
             href="https://github.com/fawad-liaqat/raast-tracker/blob/main/METHODOLOGY.md"
             target="_blank"

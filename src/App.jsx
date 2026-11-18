@@ -36,7 +36,7 @@ function App() {
           </div>
         </div>
         <p style={{ fontSize: '12px', color: '#7F8C8D', marginTop: '12px' }}>
-          Last updated: November 2026. Pakistan payment data: FY26 (July 2025 to June 2026),
+          Updated November 2026 with SBP FY26 data and new sources. Pakistan payment data: FY26 (July 2025 to June 2026),
           provisional. Account ownership: Findex 2025, survey year 2024.{' '}
           <a href="#progress">Progress from FY25 to FY26</a> | <a href="?edition=fy25">FY25 edition (March 2026)</a>
         </p>

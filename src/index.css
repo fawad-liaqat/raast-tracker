@@ -547,3 +547,7 @@ body {
   .big-number { font-size: 40px; }
   .chart-container { height: 200px; }
 }
+
+/* Phones: wide tables scroll inside their own box; long links wrap. */
+@media (max-width: 640px) { .data-table { display: block; max-width: 100%; overflow-x: auto; } }
+.block a, .source-registry li, .methodology-section li { overflow-wrap: anywhere; }

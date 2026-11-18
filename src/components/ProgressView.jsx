@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Src from './Src'
 
 // FY25 and FY26 come from the same report (SBP Payment Systems Review FY26,
@@ -23,6 +23,20 @@ const ROWS = [
 ]
 
 function ProgressView() {
+  // The browser tries the #progress anchor before React has rendered this
+  // section, so scroll to it once mounted, and again on later hash changes.
+  useEffect(() => {
+    const go = () => {
+      if (window.location.hash === '#progress') {
+        const el = document.getElementById('progress')
+        if (el) el.scrollIntoView()
+      }
+    }
+    go()
+    window.addEventListener('hashchange', go)
+    return () => window.removeEventListener('hashchange', go)
+  }, [])
+
   return (
     <section className="block" id="progress">
       <div className="block-header">

@@ -30,7 +30,7 @@ export const SOURCES = [
     url: 'https://www.karandaaz.com.pk/research/publications/karandaaz-financial-inclusion-survey-k-fis-narrative-report',
     accessed: '17 November 2026 (local copy of the PDF supplied by the owner; the web link is carried over and was not opened)',
     label: 'PRIMARY',
-    note: 'Replaces the press reports cited in the first November 2026 update. Printed page numbers.',
+    note: 'Printed page numbers.',
   },
   {
     id: 'R4',

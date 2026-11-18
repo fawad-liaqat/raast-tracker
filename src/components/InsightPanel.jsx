@@ -10,8 +10,8 @@ function InsightPanel() {
       </div>
 
       <p style={{ fontSize: '14px', color: '#566573', marginBottom: '24px', lineHeight: '1.7' }}>
-        Version 1.0 of this tracker framed the gap as a behaviour problem among users. The newer evidence
-        points somewhere else first. Only 27% of Pakistani adults have an account, and 25% made or received
+        The FY25 edition framed the gap as a behaviour problem among users. The newer evidence points
+        somewhere else first. Only 27% of Pakistani adults have an account, and 25% made or received
         a digital payment <Src id="R2" p="298" />. Findex notes that about 90% of Pakistani account owners
         use digital payments, though on a small base <Src id="R2" p="167" />. So the first barrier is getting
         people onto the rail at all. Trust, incentives and design then decide how much they use it.
@@ -51,8 +51,7 @@ function InsightPanel() {
           <strong>Evidence:</strong> In the Karandaaz survey for 2024, trust is much lower among people outside the system:
           63% of financially excluded adults trust state owned banks, 54% private banks and 52% mobile money services,
           against 93%, 90% and 92% of the financially included <Src id="R3" p="27" />. Among adults who borrowed, 85%
-          borrowed from family and friends <Src id="R3" p="25" />. (The first November update quoted press figures of
-          9% and 8% trust and 36% comfort; they do not appear in the survey report and are withdrawn.)
+          borrowed from family and friends <Src id="R3" p="25" />.
         </div>
         <div className="layer-comparison">
           <strong>Comparative (hypothesis):</strong> Kenya's M-Pesa grew through local agents whom users already

@@ -82,21 +82,12 @@ function AdoptionGapIndex({ data, userAdoption }) {
       <div className="insight-box">
         <span className="insight-label analysis">Why this denominator</span>
         <p>
-          The FY26 review is the first one I have used that prints the number of registered Raast P2P IDs
-          (49.2 million) <Src id="R1" p="11" />. That is a closer match to the people who can use Raast than
-          mobile banking users, which version 1.0 of this tracker used. For comparison on the old basis:
+          The FY26 review prints the number of registered Raast P2P IDs (49.2 million) <Src id="R1" p="11" />.
+          That is a closer match to the people who can use Raast than mobile banking users, the denominator
+          used in the FY25 edition. For comparison on that basis:
           P2P payments per mobile banking user were {cmp.fy25.computed_value} in FY25 and {cmp.fy26.computed_value} in
           FY26 ({cmp.fy25.numerator_millions.toLocaleString()}M / {cmp.fy25.denominator_millions}M and
           {" "}{cmp.fy26.numerator_millions.toLocaleString()}M / {cmp.fy26.denominator_millions}M) <Src id="R1" p="9" /> <Src id="R1" p="31" />.
-        </p>
-      </div>
-
-      <div className="insight-box warning">
-        <span className="insight-label warning">Correction to version 1.0</span>
-        <p>
-          Version 1.0 (March 2026) used 1,276 million as Raast P2P transactions for FY25. That is the total of all
-          Raast transactions. P2P alone was 1,266 million <Src id="R1" p="31" />, so the FY25 index on the old
-          basis is 52.5, not 52.9.
         </p>
       </div>
 

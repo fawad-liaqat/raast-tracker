@@ -53,7 +53,6 @@ function ComparativeAnalysis() {
 
       <div style={{ fontSize: '11px', color: '#7F8C8D', marginTop: '6px', textAlign: 'right' }}>
         Account and payment rows: World Bank Findex 2025, Table B.1 <Src id="R2" p="297" /> <Src id="R2" p="298" />.
-        Population rows from version 1.0 were removed because they had no source.
       </div>
 
       <div className="comparison-grid" style={{ marginTop: '24px' }}>
