@@ -76,13 +76,13 @@ Raast P2P payments / mobile banking users:
 1. State Bank of Pakistan. *Annual Payment Systems Review FY 2025-26*. https://www.sbp.org.pk/assets/document/publications/Annual-Payment-Systems-Review-FY26.pdf. Primary.
 2. World Bank. *The Global Findex Database 2025: Connectivity and Financial Inclusion in the Digital Economy*. https://www.worldbank.org/en/publication/globalfindex. Primary.
 3. Karandaaz Pakistan. *Karandaaz Financial Inclusion Survey (K-FIS): Narrative Report*. https://www.karandaaz.com.pk/research/publications/karandaaz-financial-inclusion-survey-k-fis-narrative-report. Primary.
-4. State Bank of Pakistan. *PSP&OD Circular No. 03 of 2025: Allocation of Subsidy for Raast Person to Merchant (P2M) QR Payments*. https://www.sbp.org.pk/psd/2025/C3.htm. Primary.
+4. State Bank of Pakistan. *PSP&OD Circular No. 03 of 2025: Allocation of Subsidy for Raast Person to Merchant (P2M) QR Payments*. https://www.sbp.org.pk/circulars/pspod-circular-no-03-of-2025. Primary.
 5. Government of India, Ministry of Finance (Press Information Bureau). *Nearly 55.49 Crore Users Onboarded on UPI as in June 2026*. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286608&reg=48&lang=2. Primary.
 6. Government of India, Ministry of Finance (Press Information Bureau). *UPI Completes 10 Years of Digital Payments Revolution*. https://www.pib.gov.in/PressReleasePage.aspx?PRID=2302657&reg=48&lang=2. Primary.
 7. Outlook Business. *No MDR charges from Jan 1 on UPI, RuPay transactions*. https://www.outlookbusiness.com/talking-money/no-mdr-charges-from-jan-1-on-upi-rupay-transactions-4103. Secondary.
 8. Reserve Bank of India. *Reserve Bank of India launches UPI for feature phones (UPI123Pay) and a 24x7 helpline for digital payments (DigiSaathi)*. https://rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=53385. Primary.
 9. Tech-ish. *Safaricom FY26: M-PESA Hits KES 183 Billion, Now 45.6% of Revenue*. https://tech-ish.com/2026/05/07/safaricom-fy26-mpesa-results-explained/. Secondary.
-10. State Bank of Pakistan. *PM launches Raast, Pakistan's instant payment system (press release on the first phase, bulk payments)*. https://www.sbp.org.pk/press/2021/Pr-11-Jan-21.pdf. Primary.
+10. State Bank of Pakistan. *PM launches Raast, Pakistan's instant payment system (press release on the first phase, bulk payments)*. https://archive.sbp.org.pk/press/2021/Pr-11-Jan-21.pdf. Primary.
 11. Jack, W. and Suri, T., American Economic Review 104(1). *Risk Sharing and Transactions Costs: Evidence from Kenya's Mobile Money Revolution*. https://www.aeaweb.org/articles?id=10.1257/aer.104.1.183. Secondary.
 12. Business Recorder. *Govt moves to continue subsidy for Raast QR payments*. https://www.brecorder.com/news/40448745/govt-moves-to-continue-subsidy-for-raast-qr-payments. Secondary.
 13. Davis, F. D., MIS Quarterly 13(3). *Perceived usefulness, perceived ease of use, and user acceptance of information technology*. https://doi.org/10.2307/249008. Secondary.

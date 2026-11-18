@@ -29,7 +29,7 @@ export const SOURCES = [
     id: 'R4',
     publisher: 'State Bank of Pakistan',
     title: 'PSP&OD Circular No. 03 of 2025: Allocation of Subsidy for Raast Person to Merchant (P2M) QR Payments',
-    url: 'https://www.sbp.org.pk/psd/2025/C3.htm',
+    url: 'https://www.sbp.org.pk/circulars/pspod-circular-no-03-of-2025',
     label: 'Primary',
   },
   {
@@ -71,7 +71,7 @@ export const SOURCES = [
     id: 'R10',
     publisher: 'State Bank of Pakistan',
     title: "PM launches Raast, Pakistan's instant payment system (press release on the first phase, bulk payments)",
-    url: 'https://www.sbp.org.pk/press/2021/Pr-11-Jan-21.pdf',
+    url: 'https://archive.sbp.org.pk/press/2021/Pr-11-Jan-21.pdf',
     label: 'Primary',
   },
   {
