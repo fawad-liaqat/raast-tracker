@@ -4,14 +4,36 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+    /* Theme, shared with the portfolio site (fawad-liaqat.netlify.app).
+       Order: ?theme=light|dark in the address (stored, then removed from the
+       address bar), then the stored choice, then dark. The choice is kept in
+       localStorage under "theme" in this browser only; storage can be blocked,
+       so every use is wrapped in try/catch. Links to the portfolio and to the
+       other project pages get ?theme= added when they are clicked. */
+    (function(){var d=document.documentElement,k="theme",t="dark",H=["fawad-liaqat.netlify.app","fawad-liaqat.github.io"];
+    function ok(v){return v==="light"||v==="dark"}
+    try{var s=localStorage.getItem(k);if(ok(s))t=s}catch(e){}
+    try{var u=new URL(location.href),q=u.searchParams.get("theme");if(ok(q)){t=q;try{localStorage.setItem(k,q)}catch(e){}u.searchParams.delete("theme");history.replaceState(history.state,"",u.pathname+u.search+u.hash)}}catch(e){}
+    d.setAttribute("data-theme",t);
+    function cur(){return d.getAttribute("data-theme")==="light"?"light":"dark"}
+    function label(){var n=cur()==="dark"?"light":"dark";var b=document.querySelectorAll("[data-theme-toggle]");for(var i=0;i<b.length;i++){b[i].hidden=false;b[i].setAttribute("aria-label","Switch to "+n+" mode");b[i].title="Switch to "+n+" mode"}}
+    function set(n){d.setAttribute("data-theme",n);try{localStorage.setItem(k,n)}catch(e){}label();try{d.dispatchEvent(new CustomEvent("themechange"))}catch(e){}}
+    function tag(e){var a=e.target&&e.target.closest?e.target.closest("a[href]"):null;if(!a)return;try{var l=new URL(a.href,location.href);if(H.indexOf(l.hostname)<0)return;if(l.origin===location.origin&&l.pathname===location.pathname&&l.search===location.search)return;l.searchParams.set("theme",cur());a.href=l.toString()}catch(e){}}
+    ["pointerdown","click","auxclick","keydown","contextmenu"].forEach(function(n){document.addEventListener(n,tag,true)});
+    document.addEventListener("click",function(e){var b=e.target&&e.target.closest?e.target.closest("[data-theme-toggle]"):null;if(b)set(cur()==="dark"?"light":"dark")});
+    window.flTheme={get:cur,set:set,label:label};
+    if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",label);else label();
+    })();
+    </script>
     <meta name="description" content="Dashboard tracking the gap between Pakistan's Raast payment rail and who actually uses it, on SBP FY26 data." />
     <meta property="og:title" content="Raast Adoption Gap Tracker" />
     <meta property="og:description" content="Raast moved 2.76 billion transactions in FY26, yet only 27% of Pakistani adults have an account. This dashboard tracks that gap." />
     <meta property="og:image" content="/og-image.png" />
     <meta property="og:type" content="website" />
     <title>Raast Adoption Gap Tracker</title>
-    <script type="module" crossorigin src="/raast-tracker/assets/index-BUjOHO9y.js"></script>
-    <link rel="stylesheet" crossorigin href="/raast-tracker/assets/index-lq7PDz3W.css">
+    <script type="module" crossorigin src="/raast-tracker/assets/index-C5NH2zhz.js"></script>
+    <link rel="stylesheet" crossorigin href="/raast-tracker/assets/index-D39BaG1C.css">
   </head>
   <body>
     <div id="root"></div>
